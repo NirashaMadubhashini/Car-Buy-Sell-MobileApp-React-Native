@@ -1,50 +1,21 @@
-import { View, Text, TextInput, Button, StyleSheet, TouchableOpacity } from 'react-native'
+import { View, Text, TextInput, Button, StyleSheet, TouchableOpacity, Image } from 'react-native'
+import { createStackNavigator } from '@react-navigation/stack';
+import { NavigationContainer } from '@react-navigation/native';
 import React from 'react'
+import Login from './screens/Login'
+import Register from './screens/Register'
+import DashBoard from './screens/DashBoard'
 
+const Stack = createStackNavigator();
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <TextInput style={styles.input1} placeholder='Username' />
-      <TextInput style={styles.input2} placeholder='Password' />
-      <TouchableOpacity
-        style={styles.btn}
-      >
-        <Text style={{ color: '#ffff', fontSize: 20 }}>Login</Text>
-      </TouchableOpacity>
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator>
+     <Stack.Screen name="Login" component={Login} />
+     <Stack.Screen name="Register" component={Register} />
+     <Stack.Screen name="DashBoard" component={DashBoard} />
+     </Stack.Navigator>
+  </NavigationContainer>
   )
 }
-
-const styles = StyleSheet.create({
-  input1: {
-    marginTop: '40%',
-    borderWidth: 1,
-    padding: 10,
-    width: '80%',
-    borderRadius: 100
-
-  },
-  input2: {
-    marginTop: '5%',
-    borderWidth: 1,
-    padding: 10,
-    width: '80%',
-    borderRadius: 100
-  },
-  container: {
-    justifyContent: 'center',
-    alignItems: 'center'
-  },
-  btn: {
-    width: '60%',
-    padding: 5,
-    backgroundColor: "#273c75",
-    height: 50,
-    alignItems: 'center',
-    justifyContent: 'center',
-    marginTop: '3%',
-    borderRadius: 100
-
-  }
-});
