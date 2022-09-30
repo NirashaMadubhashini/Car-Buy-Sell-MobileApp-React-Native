@@ -1,32 +1,70 @@
-import { ImageBackground, StyleSheet, Text, View } from 'react-native'
+import { View, Text, TextInput, Button, StyleSheet, TouchableOpacity, Image, ImageBackground } from 'react-native'
 import React from 'react'
 
-const image = { uri: "https://tse3.mm.bing.net/th?id=OIP.adlu3olLYv5Eb1Jh4CzfrAHaNK&pid=Api&P=0" };
 
 export default function AddVehicle() {
   return (
     <View style={styles.container}>
-       <ImageBackground source={image} resizeMode="cover" style={styles.image}>
-      <Text style={styles.text}>Inside</Text>
-    </ImageBackground>
+      <TextInput style={styles.input1} placeholder='Registration number.' />
+      <TextInput style={styles.input2} placeholder='Brand' />
+      <TextInput style={styles.input2} placeholder='Transmission type' />
+      <TextInput style={styles.input2} placeholder='Fuel Type' />
+      <TextInput style={styles.input2} placeholder='Color' />
+      <TextInput style={styles.input2} placeholder='Number of passengers' />
+      <TouchableOpacity style={styles.button}>
+      <Image 
+          source={require('../assets/icon/up.png')} 
+          style={{ width: 25, height: 25 ,left:85,top:15}}
+          />
+          <Text style={{ color: 'black', fontSize: 20,right:30,top:-15 }}>Upload Image</Text>
+      </TouchableOpacity>
+      <TouchableOpacity
+        style={styles.btn}>
+        <Text style={{ color: '#ffff', fontSize: 20, }}>Add Vehicle</Text>
+      </TouchableOpacity>
     </View>
   )
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center'
   },
-  image: {
-    flex: 1,
-    justifyContent: "center"
+  input1: {
+    marginTop: '5%',
+    borderWidth: 1,
+    padding: 10,
+    width: '80%',
+    borderRadius: 20
+
   },
-  text: {
-    color: "white",
-    fontSize: 42,
-    lineHeight: 84,
-    fontWeight: "bold",
-    textAlign: "center",
-    backgroundColor: "#000000c0"
+  input2: {
+    marginTop: '5%',
+    borderWidth: 1,
+    padding: 10,
+    width: '80%',
+    borderRadius: 20
+  },
+  btn: {
+    width: '60%',
+    padding: 5,
+    backgroundColor: "#273c75",
+    height: 50,
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginTop: '5%',
+    borderRadius: 20
+  },
+  button: {
+    width: '80%',
+    padding:5,
+    backgroundColor: "green",
+    height: 50,
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginTop: '3%',
+    borderRadius:20,
+    borderColor:"black"
   }
 });
