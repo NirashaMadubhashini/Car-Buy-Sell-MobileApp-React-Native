@@ -6,12 +6,18 @@ import AddVehicle from '../screens/AddVehicle'
 import VehicleInfo from '../screens/VehicleInfo'
 import { IconComponentProvider, Icon } from "@react-native-material/core";
 import { HomeStackNavigator, ContactStackNavigator } from "./StackNavigator";
+import Home from './Home';
 
 const Tab = createBottomTabNavigator();
 
 export default function DashBoard() {
   return (
     <Tab.Navigator>
+        <Tab.Screen name="Home"
+        options={{
+          tabBarIcon: () => (<Image source={require("../assets/icon/home.png")} style={{ width: 20, height: 20 }} />)
+        }}
+        component={Home} />
       <Tab.Screen name="AddVehicle"
         options={{
           tabBarIcon: () => (<Image source={require("../assets/icon/add2.png")} style={{ width: 20, height: 20 }} />)
