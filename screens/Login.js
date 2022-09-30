@@ -1,6 +1,7 @@
-import { View, Text, TextInput, Button, StyleSheet, TouchableOpacity, Image } from 'react-native'
+import { View, Text, TextInput, Button, StyleSheet, TouchableOpacity, Image,ImageBackground } from 'react-native'
 import React from 'react'
 import { Divider } from "@react-native-material/core";
+
 
 export default function Login({ navigation }) {
   return (
@@ -30,7 +31,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     padding: 10,
     width: '80%',
-    borderRadius: 100
+    borderRadius: 20
 
   },
   input2: {
@@ -38,11 +39,11 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     padding: 10,
     width: '80%',
-    borderRadius: 100
+    borderRadius: 20
   },
   container: {
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
   },
   btn: {
     width: '60%',
@@ -52,7 +53,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     marginTop: '5%',
-    borderRadius: 100
+    borderRadius: 20
   },
   btn2: {
     width: '60%',
@@ -62,7 +63,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     marginTop: '5%',
-    borderRadius: 50
+    borderRadius:20
   },
   tinyLogo: {
     marginTop: '10%',

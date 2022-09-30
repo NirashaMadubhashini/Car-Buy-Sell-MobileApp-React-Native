@@ -1,7 +1,9 @@
 import { View, Text, TextInput, Button, StyleSheet, TouchableOpacity, Image } from 'react-native'
 import React from 'react'
 
+
 export default function Register({navigation}) {
+  
   return (
     <View style={styles.container}>
       <Text style={{fontSize:35,justifyContent: 'center',color:"black",fontWeight:'bold',paddingTop: '15%'}}>Register</Text>
@@ -25,7 +27,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     padding: 10,
     width: '80%',
-    borderRadius: 100
+    borderRadius: 20
 
   },
   input2: {
@@ -33,7 +35,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     padding: 10,
     width: '80%',
-    borderRadius: 100
+    borderRadius: 20
   },
   container: {
     justifyContent: 'center',
