@@ -41,40 +41,6 @@ export default function Home() {
             </Text>
           </View>
         </View>
-        {/* <View style={{ backgroundColor: "#636e72", borderRadius: 10, overflow: "hidden",width:160,left:15,top:-220}}>
-          <View>
-            <Image
-              source={require("../assets/images/car.jpeg")}
-              style={{
-                height: 135,
-                width: 160
-              }}
-            />
-          </View>
-          <View style={{ padding: 10, width:160 }}>
-            <Text style={styles.input1}>Toyota Aqua</Text>
-            <Text style={styles.input2}>
-            Auto
-            </Text>
-          </View>
-        </View>
-        <View style={{ backgroundColor: "#636e72", borderRadius: 10, overflow: "hidden",width:160,left:185,top:-420}}>
-          <View>
-            <Image
-              source={require("../assets/images/car.jpeg")}
-              style={{
-                height: 135,
-                width: 160
-              }}
-            />
-          </View>
-          <View style={{ padding: 10, width:160 }}>
-            <Text style={styles.input1}>Toyota Corolla</Text>
-            <Text style={styles.input2}>
-            Auto
-            </Text>
-          </View>
-        </View> */}
       </View>
   )
 }
