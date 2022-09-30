@@ -6,24 +6,87 @@ import React from 'react'
    
 export default function Home() {
   return (
-    <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-        <View style={{ backgroundColor: "#eee", borderRadius: 10, overflow: "hidden" }}>
+    <View style={{ flex: 1, justifyContent: "center"}}>
+        <View style={{ backgroundColor: "#636e72", borderRadius: 10, overflow: "hidden",width:160,left:15,top:-40}}>
+          <View>
+            <Image
+              source={require("../assets/images/car4.jpeg")}
+              style={{
+                height: 135,
+                width: 160
+              }}
+            />
+          </View>
+          <View style={{ padding: 10, width:160 }}>
+            <Text style={styles.input1}>Toyota Aqua</Text>
+            <Text style={styles.input2}>
+            Auto
+            </Text>
+          </View>
+        </View>
+        <View style={{ backgroundColor: "#636e72", borderRadius: 10, overflow: "hidden",width:160,left:185,top:-245}}>
+          <View>
+            <Image
+              source={require("../assets/images/Aqua.jpeg")}
+              style={{
+                height: 135,
+                width: 160
+              }}
+            />
+          </View>
+          <View style={{ padding: 10, width:160 }}>
+            <Text style={styles.input1}>Toyota Corolla</Text>
+            <Text style={styles.input2}>
+            Auto
+            </Text>
+          </View>
+        </View>
+        {/* <View style={{ backgroundColor: "#636e72", borderRadius: 10, overflow: "hidden",width:160,left:15,top:-220}}>
           <View>
             <Image
               source={require("../assets/images/car.jpeg")}
               style={{
                 height: 135,
-                width: 155
+                width: 160
               }}
             />
           </View>
-          <View style={{ padding: 10, width: 155 }}>
-            <Text>Title</Text>
-            <Text style={{ color: "#777", paddingTop: 5 }}>
-              Description of the image
+          <View style={{ padding: 10, width:160 }}>
+            <Text style={styles.input1}>Toyota Aqua</Text>
+            <Text style={styles.input2}>
+            Auto
             </Text>
           </View>
         </View>
+        <View style={{ backgroundColor: "#636e72", borderRadius: 10, overflow: "hidden",width:160,left:185,top:-420}}>
+          <View>
+            <Image
+              source={require("../assets/images/car.jpeg")}
+              style={{
+                height: 135,
+                width: 160
+              }}
+            />
+          </View>
+          <View style={{ padding: 10, width:160 }}>
+            <Text style={styles.input1}>Toyota Corolla</Text>
+            <Text style={styles.input2}>
+            Auto
+            </Text>
+          </View>
+        </View> */}
       </View>
   )
 }
+
+const styles = StyleSheet.create({
+    input1:{
+        fontSize:20,
+        color:"black",
+        fontWeight:'bold',
+      },
+      input2:{
+        fontSize:15,
+        color:"black",
+      }
+})
