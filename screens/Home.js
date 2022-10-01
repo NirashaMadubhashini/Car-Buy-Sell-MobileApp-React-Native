@@ -20,9 +20,9 @@ export default function Home() {
               />
             </View>
             <View style={{ padding: 10, width: 160 }}>
-              <Text style={styles.input1}>Toyota Aqua</Text>
+              <Text style={styles.input1}>Premium Cars</Text>
               <Text style={styles.input2}>
-                Auto
+                Auto / Manual
               </Text>
             </View>
           </View>
@@ -37,9 +37,9 @@ export default function Home() {
               />
             </View>
             <View style={{ padding: 10, width: 160 }}>
-              <Text style={styles.input1}>Toyota Corolla</Text>
+              <Text style={styles.input1}>Luxury Cars</Text>
               <Text style={styles.input2}>
-                Auto
+              Auto / Manual
               </Text>
             </View>
           </View>
