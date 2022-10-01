@@ -84,7 +84,7 @@ export default function Home() {
               </Text>
             </View>
           </View>
-          <View style={{ backgroundColor: "#E5CBA8", borderRadius: 10, overflow: "hidden", height: 250, width: 330, left: 15, top: -160 }}>
+          <View style={{ backgroundColor: "#947483", borderRadius: 10, overflow: "hidden", height: 250, width: 330, left: 15, top: -160 }}>
             <View>
               <Image
                 source={require("../assets/images/Fiat.jpg")}
@@ -105,7 +105,7 @@ export default function Home() {
             </View>
           </View>
           <Text style={{fontSize:20,justifyContent: 'center',color:"black",fontWeight:'bold',top:-130,left:25}}>Top Dealers</Text>
-          <View style={{ backgroundColor: "#655C5A", borderRadius: 10, overflow: "hidden", height: 100, width: 150, left: 15, top: -100 }}>
+          <View style={{borderRadius: 10, overflow: "hidden", height: 100, width: 150, left: 15, top: -100 }}>
             <View>
               <Image
                 source={require("../assets/images/hertz.jpeg")}
@@ -122,7 +122,7 @@ export default function Home() {
               </Text>
             </View>
           </View>
-          <View style={{ backgroundColor: "#655C5A", borderRadius: 10, overflow: "hidden", height: 100, width: 150, left: 185, top: -200 }}>
+          <View style={{  borderRadius: 10, overflow: "hidden", height: 100, width: 150, left: 185, top: -200 }}>
             <View>
               <Image
                 source={require("../assets/images/avis.jpeg")}
@@ -139,7 +139,7 @@ export default function Home() {
               </Text>
             </View>
           </View>
-          <View style={{ backgroundColor: "#655C5A", borderRadius: 10, overflow: "hidden", height: 100, width: 150, left: 185, top: -190 }}>
+          <View style={{ borderRadius: 10, overflow: "hidden", height: 100, width: 150, left: 185, top: -190 }}>
             <View>
               <Image
                 source={require("../assets/images/ncda.jpeg")}
@@ -156,7 +156,7 @@ export default function Home() {
               </Text>
             </View>
           </View>
-          <View style={{ backgroundColor: "#655C5A", borderRadius: 10, overflow: "hidden", height: 100, width: 150, left: 15, marginTop: -290 }}>
+          <View style={{ borderRadius: 10, overflow: "hidden", height: 100, width: 150, left: 15, marginTop: -290 }}>
             <View>
               <Image
                 source={require("../assets/images/mahi.jpeg")}

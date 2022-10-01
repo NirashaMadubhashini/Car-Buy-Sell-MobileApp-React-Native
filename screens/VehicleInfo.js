@@ -1,86 +1,143 @@
-import { View, Text, TextInput, Button, StyleSheet, TouchableOpacity, Card, Image, ImageBackground, ListItem, ScrollView, SafeAreaView } from 'react-native'
-import React from 'react'
+import React, { useState } from "react";
+import { Alert, Modal, StyleSheet, Text, Pressable, View ,Image,ScrollView, SafeAreaView} from "react-native";
 
 export default function VehicleInfo() {
+  const [modalVisible, setModalVisible] = useState(false);
   return (
     <SafeAreaView style={{ flex: 1 }}>
     <ScrollView>
-      <View style={{ flex: 1, justifyContent: "center" }}>
-        <View style={{ backgroundColor: "#636e72", borderRadius: 10, overflow: "hidden", width: 160, left: 15, top: 20 }}>
-          <View>
-            <Image
-              source={require("../assets/images/car4.jpeg")}
+    <Text style={{fontSize:20,justifyContent: 'center',color:"black",fontWeight:'bold',paddingTop: '3%',left:20}}>General Cars</Text>
+    <View style={styles.centeredView}>
+      <Modal
+        animationType="slide"
+        transparent={true}
+        visible={modalVisible}
+        onRequestClose={() => {
+          Alert.alert("Modal has been closed.");
+          setModalVisible(!modalVisible);
+        }}
+      >
+        <View style={styles.centeredView}>
+          <View style={styles.modalView}>
+          <Image
+              source={require("../assets/cars/Alto.jpeg")}
               style={{
                 height: 135,
-                width: 160
+                width: 200
+              }}
+            />
+            <View style={{ padding: 10, width: 200 }}>
+              <Text style={styles.input1}>Suzuki Alto</Text>
+
+              
+              <Text style={styles.input2}>
+              Transmission type: Manual
+              </Text>
+              <Text style={styles.input2}>
+              Fuel type: Petrol
+              </Text>
+              <Text style={styles.input2}>
+              Color: Red
+              </Text>
+              <Text style={styles.input2}>
+              No of passengers : 7
+              </Text>
+            </View>
+            <Pressable
+              style={[styles.button2, styles.buttonClose]}
+              onPress={() => setModalVisible(!modalVisible)}
+            >
+              <Text style={styles.textStyle}>Buy Now</Text>
+            </Pressable>
+          </View>
+        </View>
+      </Modal>
+      <View style={{ backgroundColor: "#A77065", borderRadius: 10, overflow: "hidden", width: 200, height:300,left: -60,marginTop:'-2%'}}>
+          <View>
+          <View style={{ padding: 10, width: 200 }}>
+            <Text style={styles.input1}>Suzuki Alto</Text>
+            <Text style={styles.input2}>
+            Manual
+            </Text>
+          </View>
+            <Image
+              source={require("../assets/cars/Alto.jpeg")}
+              style={{
+                height: 135,
+                width: 200
               }}
             />
           </View>
-          <View style={{ padding: 10, width: 160 }}>
-            <Text style={styles.input1}>Toyota Aqua</Text>
-            <Text style={styles.input2}>
-              Auto
-            </Text>
-          </View>
+          <Pressable
+        style={[styles.button, styles.buttonOpen]}
+        onPress={() => setModalVisible(true)}
+      >
+        <Text style={styles.textStyle}>View Details</Text>
+      </Pressable>
+
         </View>
-        <View style={{ backgroundColor: "#636e72", borderRadius: 10, overflow: "hidden", width: 160, left: 185, top: -180 }}>
-          <View>
-            <Image
-              source={require("../assets/images/Aqua.jpeg")}
-              style={{
-                height: 135,
-                width: 160
-              }}
-            />
-          </View>
-          <View style={{ padding: 10, width: 160 }}>
-            <Text style={styles.input1}>Toyota Corolla</Text>
-            <Text style={styles.input2}>
-              Auto
-            </Text>
-          </View>
-        </View>
-        <View style={{ backgroundColor: "#636e72", borderRadius: 10, overflow: "hidden", width: 160, left: 15, top: -150 }}>
-          <View>
-            <Image
-              source={require("../assets/images/car4.jpeg")}
-              style={{
-                height: 135,
-                width: 160
-              }}
-            />
-          </View>
-          <View style={{ padding: 10, width: 160 }}>
-            <Text style={styles.input1}>Toyota Aqua</Text>
-            <Text style={styles.input2}>
-              Auto
-            </Text>
-          </View>
-        </View>
-        <View style={{ backgroundColor: "#636e72", borderRadius: 10, overflow: "hidden", width: 160, left: 185, top: -350 }}>
-          <View>
-            <Image
-              source={require("../assets/images/Aqua.jpeg")}
-              style={{
-                height: 135,
-                width: 160
-              }}
-            />
-          </View>
-          <View style={{ padding: 10, width: 160 }}>
-            <Text style={styles.input1}>Toyota Corolla</Text>
-            <Text style={styles.input2}>
-              Auto
-            </Text>
-          </View>
-        </View>
-      </View>
+    </View>
     </ScrollView>
   </SafeAreaView>
   )
 }
 
 const styles = StyleSheet.create({
+  centeredView: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    marginTop: 22
+  },
+  modalView: {
+    margin: 20,
+    backgroundColor: "white",
+    borderRadius: 20,
+    padding: 35,
+    alignItems: "center",
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 10,
+      height: 20
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 4,
+    elevation: 5,
+    marginTop: 10,
+    width:300,
+    height:400
+  },
+  button: {
+    borderRadius: 10,
+    padding: 10,
+    elevation: 2,
+    top:20,
+    width:150,
+    left:25
+  },
+  button2: {
+    borderRadius: 10,
+    padding: 10,
+    elevation: 2,
+    top:10,
+    width:150,
+    left:5
+  },
+  buttonOpen: {
+    backgroundColor: "#2196F3",
+  },
+  buttonClose: {
+    backgroundColor: "green",
+  },
+  textStyle: {
+    color: "white",
+    fontWeight: "bold",
+    textAlign: "center"
+  },
+  modalText: {
+    marginBottom: 15,
+    textAlign: "center"
+  },
   input1: {
     fontSize: 20,
     color: "black",
@@ -90,4 +147,4 @@ const styles = StyleSheet.create({
     fontSize: 15,
     color: "black",
   }
-})
+});
