@@ -4,6 +4,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import AddVehicle from '../screens/AddVehicle'
 import VehicleInfo from '../screens/VehicleInfo'
+import BuyVehicle from '../screens/BuyVehicle'
 import { IconComponentProvider, Icon } from "@react-native-material/core";
 import { HomeStackNavigator, ContactStackNavigator } from "./StackNavigator";
 import Home from './Home';
@@ -30,7 +31,7 @@ export default function DashBoard() {
       <Tab.Screen name="BuyVehicle" options={{
         tabBarIcon: () => (<Image source={require("../assets/icon/buy4.png")} style={{ width: 20, height: 20 }} />)
       }}
-        component={VehicleInfo} />
+        component={BuyVehicle} />
 
     </Tab.Navigator>
   )
