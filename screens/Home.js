@@ -1,11 +1,11 @@
-import { View, Overlay,Text, TextInput, Button, StyleSheet, TouchableOpacity, Card, Image, ImageBackground, ListItem, ScrollView, SafeAreaView } from 'react-native'
+import {ActivityIndicator,View, Overlay,Text, TextInput, Button, StyleSheet, TouchableOpacity, Card,Box, Image, ImageBackground, ListItem, ScrollView, SafeAreaView,Surface, Stack } from 'react-native'
 import React  ,{ useState } from 'react'
 
 
 export default function Home() {
 
   return (
-    <SafeAreaView style={{ flex: 1 }}>
+    <SafeAreaView style={{ flex:1}}>
       <ScrollView>
         <View style={{ flex: 1, justifyContent: "center" }}>
         <Text style={{fontSize:20,justifyContent: 'center',color:"black",fontWeight:'bold',paddingTop: '3%',left:20}}>Buy And Sell Your Cars Here</Text>
@@ -101,6 +101,75 @@ export default function Home() {
               </Text>
               <Text style={styles.input3}>
               1.9% financing for 60 months. (Expires: 09/11/22)
+              </Text>
+            </View>
+          </View>
+          <Text style={{fontSize:20,justifyContent: 'center',color:"black",fontWeight:'bold',top:-130,left:25}}>Top Dealers</Text>
+          <View style={{ backgroundColor: "#655C5A", borderRadius: 10, overflow: "hidden", height: 100, width: 150, left: 15, top: -100 }}>
+            <View>
+              <Image
+                source={require("../assets/images/hertz.jpeg")}
+                style={{
+                  height: 100,
+                  width: 150
+                }}
+              />
+            </View>
+            <View style={{ padding: 10, width: 160 }}>
+              <Text style={styles.input1}>Toyota Aqua</Text>
+              <Text style={styles.input2}>
+                Auto
+              </Text>
+            </View>
+          </View>
+          <View style={{ backgroundColor: "#655C5A", borderRadius: 10, overflow: "hidden", height: 100, width: 150, left: 185, top: -200 }}>
+            <View>
+              <Image
+                source={require("../assets/images/avis.jpeg")}
+                style={{
+                  height: 100,
+                  width: 150
+                }}
+              />
+            </View>
+            <View style={{ padding: 10, width: 160 }}>
+              <Text style={styles.input1}>Toyota Aqua</Text>
+              <Text style={styles.input2}>
+                Auto
+              </Text>
+            </View>
+          </View>
+          <View style={{ backgroundColor: "#655C5A", borderRadius: 10, overflow: "hidden", height: 100, width: 150, left: 185, top: -190 }}>
+            <View>
+              <Image
+                source={require("../assets/images/ncda.jpeg")}
+                style={{
+                  height: 100,
+                  width: 150
+                }}
+              />
+            </View>
+            <View style={{ padding: 10, width: 160 }}>
+              <Text style={styles.input1}>Toyota Aqua</Text>
+              <Text style={styles.input2}>
+                Auto
+              </Text>
+            </View>
+          </View>
+          <View style={{ backgroundColor: "#655C5A", borderRadius: 10, overflow: "hidden", height: 100, width: 150, left: 15, marginTop: -290 }}>
+            <View>
+              <Image
+                source={require("../assets/images/mahi.jpeg")}
+                style={{
+                  height: 100,
+                  width: 150
+                }}
+              />
+            </View>
+            <View style={{ padding: 10, width: 160 }}>
+              <Text style={styles.input1}>Toyota Aqua</Text>
+              <Text style={styles.input2}>
+                Auto
               </Text>
             </View>
           </View>
