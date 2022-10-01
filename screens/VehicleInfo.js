@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Alert, Modal, StyleSheet, Text, Pressable, View ,Image,ScrollView, SafeAreaView} from "react-native";
 
-export default function VehicleInfo() {
+export default function VehicleInfo({navigation}) {
   const [modalVisible, setModalVisible] = useState(false);
   return (
     <SafeAreaView style={{ flex: 1 }}>
@@ -45,9 +45,16 @@ export default function VehicleInfo() {
             </View>
             <Pressable
               style={[styles.button2, styles.buttonClose]}
-              onPress={() => setModalVisible(!modalVisible)}
+              // onPress={() => setModalVisible(!modalVisible)}
+              onPress={()=>{navigation.navigate("BuyVehicle"),setModalVisible(!modalVisible)}}
             >
               <Text style={styles.textStyle}>Buy Now</Text>
+            </Pressable>
+            <Pressable
+              style={[styles.button3, styles.buttonExit]}
+              onPress={() => setModalVisible(!modalVisible)}
+            >
+              <Text style={styles.textStyle}>Close</Text>
             </Pressable>
           </View>
         </View>
@@ -120,14 +127,25 @@ const styles = StyleSheet.create({
     padding: 10,
     elevation: 2,
     top:10,
-    width:150,
-    left:5
+    width:120,
+    left:65
+  },
+  button3: {
+    borderRadius: 10,
+    padding: 10,
+    elevation: 2,
+    top:-30,
+    width:120,
+    left:-70
   },
   buttonOpen: {
     backgroundColor: "#2196F3",
   },
   buttonClose: {
     backgroundColor: "green",
+  },
+  buttonExit: {
+    backgroundColor: "red",
   },
   textStyle: {
     color: "white",
