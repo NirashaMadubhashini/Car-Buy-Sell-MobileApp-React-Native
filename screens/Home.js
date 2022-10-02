@@ -9,10 +9,10 @@ export default function Home() {
       <ScrollView>
         <View style={{ flex: 1, justifyContent: "center" }}>
         <Text style={{fontSize:20,justifyContent: 'center',color:"black",fontWeight:'bold',paddingTop: '3%',left:20}}>Buy And Sell Your Cars Here</Text>
-          <View style={{ backgroundColor: "#655C5A", borderRadius: 10, overflow: "hidden", height: 250, width: 160, left: 15, top: 20 }}>
+          <View style={{ backgroundColor: "#8F8A87", borderRadius: 10, overflow: "hidden", height: 250, width: 160, left: 15, top: 20 }}>
             <View>
               <Image
-                source={require("../assets/images/car4.jpeg")}
+                source={require("../assets/cars/Alto.jpeg")}
                 style={{
                   height: 150,
                   width: 160
@@ -20,13 +20,13 @@ export default function Home() {
               />
             </View>
             <View style={{ padding: 10, width: 160 }}>
-              <Text style={styles.input1}>Premium Cars</Text>
+              <Text style={styles.input1}>General Cars</Text>
               <Text style={styles.input2}>
                 Auto / Manual
               </Text>
             </View>
           </View>
-          <View style={{ backgroundColor: "#9E7754", borderRadius: 10, overflow: "hidden", height: 250, width: 160, left: 185, top: -230 }}>
+          <View style={{ backgroundColor: "#73747A", borderRadius: 10, overflow: "hidden", height: 250, width: 160, left: 185, top: -230 }}>
             <View>
               <Image
                 source={require("../assets/images/Aqua.jpeg")}
@@ -37,6 +37,23 @@ export default function Home() {
               />
             </View>
             <View style={{ padding: 10, width: 160 }}>
+              <Text style={styles.input1}>Premium Cars</Text>
+              <Text style={styles.input2}>
+              Auto / Manual
+              </Text>
+            </View>
+          </View>
+          <View style={{ backgroundColor: "#C8C5CA", borderRadius: 10, overflow: "hidden", height: 250, width: 330, left: 15, top: -220 }}>
+            <View>
+              <Image
+                source={require("../assets/images/Aqua.jpeg")}
+                style={{
+                  height: 150,
+                  width: 330
+                }}
+              />
+            </View>
+            <View style={{ padding: 10, width: 330 }}>
               <Text style={styles.input1}>Luxury Cars</Text>
               <Text style={styles.input2}>
               Auto / Manual

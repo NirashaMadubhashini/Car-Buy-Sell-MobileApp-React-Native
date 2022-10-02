@@ -20,7 +20,7 @@ export default function AddVehicle() {
       </TouchableOpacity>
       <TouchableOpacity
         style={styles.btn}>
-        <Text style={{ color: '#ffff', fontSize: 20, }}>Add Vehicle</Text>
+        <Text style={{ color: '#ffff', fontSize: 20, }}>Save Vehicle</Text>
       </TouchableOpacity>
     </View>
   )
@@ -49,7 +49,7 @@ const styles = StyleSheet.create({
   btn: {
     width: '60%',
     padding: 5,
-    backgroundColor: "#273c75",
+    backgroundColor: "#452382",
     height: 50,
     alignItems: 'center',
     justifyContent: 'center',
@@ -59,7 +59,7 @@ const styles = StyleSheet.create({
   button: {
     width: '80%',
     padding:5,
-    backgroundColor: "green",
+    backgroundColor: "#BF8700",
     height: 50,
     alignItems: 'center',
     justifyContent: 'center',
