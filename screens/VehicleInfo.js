@@ -60,7 +60,7 @@ export default function VehicleInfo({navigation}) {
           </View>
         </View>
       </Modal>
-      <View style={{ backgroundColor: "#A77065", borderRadius: 10, overflow: "hidden", width: 200, height:300,left:-220,top:-280}}>
+      <View style={{ backgroundColor: "#A77065", borderRadius: 10, overflow: "hidden", width: 200, height:300,left:-150,top:-280}}>
           <View>
           <View style={{ padding: 10, width: 200 }}>
             <Text style={styles.input1}>Suzuki Alto</Text>
@@ -98,27 +98,27 @@ export default function VehicleInfo({navigation}) {
         <View style={styles.centeredView}>
           <View style={styles.modalView}>
           <Image
-              source={require("../assets/cars/Alto.jpeg")}
+              source={require("../assets/cars/AltoK10.jpeg")}
               style={{
                 height: 135,
                 width: 200
               }}
             />
             <View style={{ padding: 10, width: 200 }}>
-              <Text style={styles.input1}>Suzuki Alto</Text>
+              <Text style={styles.input1}>Suzuki Alto K10</Text>
 
               
               <Text style={styles.input2}>
-              Transmission type: Manual
+              Transmission type:  Auto
               </Text>
               <Text style={styles.input2}>
               Fuel type: Petrol
               </Text>
               <Text style={styles.input2}>
-              Color: Red
+              Color: Orange
               </Text>
               <Text style={styles.input2}>
-              No of passengers : 7
+              No of passengers : 8
               </Text>
             </View>
             <Pressable
@@ -137,16 +137,93 @@ export default function VehicleInfo({navigation}) {
           </View>
         </View>
       </Modal>
-      <View style={{ backgroundColor: "#A77065", borderRadius: 10, overflow: "hidden", width: 200, height:300,left:-450,top:-280}}>
+      <View style={{ backgroundColor: "#F6753C", borderRadius: 10, overflow: "hidden", width: 200, height:300,left:-230,top:-280}}>
           <View>
           <View style={{ padding: 10, width: 200 }}>
-            <Text style={styles.input1}>Suzuki Alto</Text>
+            <Text style={styles.input1}>Suzuki Alto K10</Text>
             <Text style={styles.input2}>
-            Manual
+            Auto
             </Text>
           </View>
             <Image
-              source={require("../assets/cars/Alto.jpeg")}
+              source={require("../assets/cars/AltoK10.jpeg")}
+              style={{
+                height: 135,
+                width: 200
+              }}
+            />
+          </View>
+          <Pressable
+        style={[styles.button, styles.buttonOpen]}
+        onPress={() => setModalVisible(true)}
+      >
+        <Text style={styles.textStyle}>View Details</Text>
+      </Pressable>
+
+      </View>
+    </View>
+    <View style={styles.centeredView}>
+      <Modal
+        animationType="slide"
+        transparent={true}
+        visible={modalVisible}
+        onRequestClose={() => {
+          Alert.alert("Modal has been closed.");
+          setModalVisible(!modalVisible);
+        }}
+      >
+        <View style={styles.centeredView}>
+          <View style={styles.modalView}>
+          <Image
+              source={require("../assets/cars/Celerio.jpeg")}
+              style={{
+                height: 135,
+                width: 200
+              }}
+            />
+            <View style={{ padding: 10, width: 200 }}>
+              <Text style={styles.input1}>Suzuki Celerio</Text>
+
+              
+              <Text style={styles.input2}>
+              Transmission type:  Auto
+              </Text>
+              <Text style={styles.input2}>
+              Fuel type: Petrol
+              </Text>
+              <Text style={styles.input2}>
+              Color: Blue
+              </Text>
+              <Text style={styles.input2}>
+              No of passengers : 5
+              </Text>
+            </View>
+            <Pressable
+              style={[styles.button2, styles.buttonClose]}
+              // onPress={() => setModalVisible(!modalVisible)}
+              onPress={()=>{navigation.navigate("BuyVehicle"),setModalVisible(!modalVisible)}}
+            >
+              <Text style={styles.textStyle}>Buy Now</Text>
+            </Pressable>
+            <Pressable
+              style={[styles.button3, styles.buttonExit]}
+              onPress={() => setModalVisible(!modalVisible)}
+            >
+              <Text style={styles.textStyle}>Close</Text>
+            </Pressable>
+          </View>
+        </View>
+      </Modal>
+      <View style={{ backgroundColor: "#395FC0", borderRadius: 10, overflow: "hidden", width: 200, height:300,left:-310,top:-280}}>
+          <View>
+          <View style={{ padding: 10, width: 200 }}>
+            <Text style={styles.input1}>Suzuki Celerio</Text>
+            <Text style={styles.input2}>
+            Auto
+            </Text>
+          </View>
+            <Image
+              source={require("../assets/cars/Celerio.jpeg")}
               style={{
                 height: 135,
                 width: 200
