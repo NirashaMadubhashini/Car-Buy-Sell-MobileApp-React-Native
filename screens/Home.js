@@ -43,23 +43,6 @@ export default function Home() {
               </Text>
             </View>
           </View>
-          <View style={{ backgroundColor: "#C8C5CA", borderRadius: 10, overflow: "hidden", height: 250, width: 330, left: 15, top: -220 }}>
-            <View>
-              <Image
-                source={require("../assets/images/Aqua.jpeg")}
-                style={{
-                  height: 150,
-                  width: 330
-                }}
-              />
-            </View>
-            <View style={{ padding: 10, width: 330 }}>
-              <Text style={styles.input1}>Luxury Cars</Text>
-              <Text style={styles.input2}>
-              Auto / Manual
-              </Text>
-            </View>
-          </View>
           <Text style={{fontSize:20,justifyContent: 'center',color:"black",fontWeight:'bold',top:-200,left:25}}>Active Promotions</Text>
           <View style={{ backgroundColor: "#9E9B9F", borderRadius: 10, overflow: "hidden", height: 250, width: 330, left: 15, top: -180 }}>
             <View>
