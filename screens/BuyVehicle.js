@@ -3,102 +3,114 @@ import { Alert, Modal, StyleSheet, Text, Pressable, View ,Image,ScrollView, Safe
 
 
 
-export default function BuyVehicle() {
-  
-  const [visible, setVisible] = useState(false);
-1
-
-const Modal_View = () => (
-  <Modal transparent={false}
-    animationType={"slide"}
-    visible={visible}
-    onRequestClose={() => setVisible(!visible)}>
-    <View style={styleSheet.MainContainer}>
-      <View style={styleSheet.modalView}>
-        <Text style={styleSheet.text}>Example of Modal in React native </Text>
-        <Button title="Click Here To Hide Modal 01" onPress={() => setVisible(!visible)} />
+export default function BuyVehicle(navigation) {
+  return(
+    <View style={{
+      margin: 20,
+      backgroundColor: "white",
+      borderRadius: 20,
+      padding: 35,
+      alignItems: "center",
+      shadowColor: "#000",
+      shadowOffset: {
+        width: 10,
+        height: 20
+      },
+      shadowOpacity: 0.25,
+      shadowRadius: 4,
+      elevation: 5,
+      marginTop: 10,
+      width: 250,
+      height: 350
+    }}>
+      <Image
+        source={require("../assets/cars/Alto.jpeg")}
+        style={{
+          height: 135,
+          width: 200,
+          top: -20
+        }}
+      />
+      <View style={{ padding: 10, width: 200 }}>
+        <Text style={styles.input1}>Suzuki Alto</Text>
+        <Text style={styles.input2}>
+          Transmission type: Manual
+        </Text>
+        <Text style={styles.input2}>
+          Fuel type: Petrol
+        </Text>
+        <Text style={styles.input2}>
+          Color: Red
+        </Text>
+        <Text style={styles.input2}>
+          No of passengers : 7
+        </Text>
+        <Pressable
+          style={[styles.button, styles.buttonClose]}
+          onPress={() => { navigation.navigate("BuyVehicle"), setModalVisible(!modalVisible) }}
+        >
+          <Text style={styles.textStyle}>Buy Now</Text>
+        </Pressable>
       </View>
     </View>
-  </Modal>
-);
-
-const Modal_View2 = () => (
-  <Modal transparent={false}
-    animationType={"slide"}
-    visible={visible}
-    onRequestClose={() => setVisible(!visible)}>
-    <View style={styleSheet.MainContainer2}>
-      <View style={styleSheet.modalView2}>
-        <Text style={styleSheet.text2}>Example of Modal in React native </Text>
-        <Button title="Click Here To Hide Modal 02" onPress={() => setVisible(!visible)} />
-      </View>
-    </View>
-  </Modal>
-);
-
-return (
-  <SafeAreaView style={{ flex: 1 }}>
-    <View style={styleSheet.MainContainer}>
-      <Modal_View />
-      <Button onPress={()=> setVisible(true)} title='Show Modal' />
-    </View>
-    <View style={styleSheet.MainContainer2}>
-    <Modal_View2/>
-      <Button onPress={()=> setVisible(true)} title='Show Modal2' />
-    </View>
-  </SafeAreaView>
-  
-);
+  )
 }
 
-const styleSheet = StyleSheet.create({
-
-  MainContainer: {
-    flex: 1,
-    padding: 10,
-    alignItems: 'center',
-    justifyContent: 'center'
-  },
-  MainContainer2: {
-    flex: 1,
-    padding: 10,
-    alignItems: 'center',
-    justifyContent: 'center'
-  },
-
+const styles = StyleSheet.create({
   modalView: {
-    width: 300,
-    height: 240,
-    backgroundColor: 'blue',
-    justifyContent: 'center',
-    alignItems: 'center',
+    margin: 20,
+    backgroundColor: "white",
+    borderRadius: 20,
+    padding: 35,
+    alignItems: "center",
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 10,
+      height: 20
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 4,
+    elevation: 5,
+    marginTop: 10,
+    width: 250,
+    height: 350
+  },
+
+  button: {
     borderRadius: 10,
-    borderWidth: 1,
-    borderColor: 'white'
+    padding: 10,
+    elevation: 2,
+    top: -5,
+    width: 200,
+    justifyContent: "center",
   },
-  modalView2: {
-    width: 300,
-    height: 240,
-    backgroundColor: '#00C853',
-    justifyContent: 'center',
-    alignItems: 'center',
-    borderRadius: 10,
-    borderWidth: 1,
-    borderColor: 'white'
+  buttonOpen: {
+    backgroundColor: "#2196F3",
   },
-
-
-  text: {
-    fontSize: 28,
-    textAlign: 'center',
-    color: 'white',
-    padding: 10
+  buttonClose: {
+    backgroundColor: "green",
   },
-
-  text2: {
-    fontSize: 28,
-    textAlign: 'center',
-    color: 'white',
-    padding: 10
+  buttonExit: {
+    backgroundColor: "red",
+  },
+  textStyle: {
+    color: "white",
+    fontWeight: "bold",
+    textAlign: "center"
+  },
+  modalText: {
+    marginBottom: 15,
+    textAlign: "center"
+  },
+  input1: {
+    fontSize: 20,
+    color: "black",
+    fontWeight: 'bold',
+    top: -20
+  },
+  input2: {
+    fontSize: 15,
+    color: "black",
+    top: -20
   }
 });
