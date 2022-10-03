@@ -5,7 +5,7 @@ export default function VehicleInfo({ navigation }) {
   const [modalVisible, setModalVisible] = useState(false);
   return (
     <SafeAreaView style={{ flex: 1 }}>
-      <ScrollView contentContainerStyle={{ height: 1000 }}>
+      <ScrollView contentContainerStyle={{ height: 1350 }}>
         <ScrollView horizontal contentContainerStyle={{ width: 1090 }}>
           <Text style={{ fontSize: 20, justifyContent: 'center', color: "black", fontWeight: 'bold', paddingTop: '3%', left: 20 }}>General Cars</Text>
           <View style={{ flex: 1, justifyContent: "center" }}>
@@ -23,7 +23,7 @@ export default function VehicleInfo({ navigation }) {
               shadowOpacity: 0.25,
               shadowRadius: 4,
               elevation: 5,
-              top:330,
+              top:160,
               left:-120,
               width: 250,
               height: 350
@@ -72,7 +72,7 @@ export default function VehicleInfo({ navigation }) {
               shadowOpacity: 0.25,
               shadowRadius: 4,
               elevation: 5,
-              top:-60,
+              top:-230,
               left:150,
               width: 250,
               height: 350
@@ -121,7 +121,7 @@ export default function VehicleInfo({ navigation }) {
               shadowOpacity: 0.25,
               shadowRadius: 4,
               elevation: 5,
-              top:-450,
+              top:-620,
               left:420,
               width: 250,
               height: 350
@@ -170,7 +170,7 @@ export default function VehicleInfo({ navigation }) {
               shadowOpacity: 0.25,
               shadowRadius: 4,
               elevation: 5,
-              top:-840,
+              top:-1010,
               left:690,
               width: 250,
               height: 350
@@ -207,7 +207,7 @@ export default function VehicleInfo({ navigation }) {
             </View>
           </View>
 
-          <Text style={{ fontSize: 20, justifyContent: 'center', color: "black", fontWeight: 'bold', paddingTop: '43%', left: -510 }}>Premium Cars</Text>
+          <Text style={{ fontSize: 20, justifyContent: 'center', color: "black", fontWeight: 'bold', paddingTop: '45%', left: -340 }}>Premium Cars</Text>
           <View style={{ flex: 1, justifyContent: "center" }}>
             <View style={{
               margin: 20,
@@ -223,8 +223,8 @@ export default function VehicleInfo({ navigation }) {
               shadowOpacity: 0.25,
               shadowRadius: 4,
               elevation: 5,
-              top:780,
-              left:-670,
+              top:620,
+              left:-490,
               width: 250,
               height: 350
             }}>
@@ -272,8 +272,8 @@ export default function VehicleInfo({ navigation }) {
               shadowOpacity: 0.25,
               shadowRadius: 4,
               elevation: 5,
-              top:390,
-              left:-400,
+              top:230,
+              left:-220,
               width: 250,
               height: 350
             }}>
@@ -321,8 +321,8 @@ export default function VehicleInfo({ navigation }) {
               shadowOpacity: 0.25,
               shadowRadius: 4,
               elevation: 5,
-              top:-1,
-              left:-130,
+              top:-160,
+              left:50,
               width: 250,
               height: 350
             }}>
@@ -370,8 +370,8 @@ export default function VehicleInfo({ navigation }) {
               shadowOpacity: 0.25,
               shadowRadius: 4,
               elevation: 5,
-              top:-390,
-              left:140,
+              top:-550,
+              left:320,
               width: 250,
               height: 350
             }}>
@@ -407,6 +407,207 @@ export default function VehicleInfo({ navigation }) {
             </View>
           </View>
 
+
+
+          <Text style={{ fontSize: 20, justifyContent: 'center', color: "black", fontWeight: 'bold', paddingTop: '85%', left: -710 }}>Luxury Cars</Text>
+          <View style={{ flex: 1, justifyContent: "center" }}>
+            <View style={{
+              margin: 20,
+              backgroundColor: "white",
+              borderRadius: 20,
+              padding: 35,
+              alignItems: "center",
+              shadowColor: "#000",
+              shadowOffset: {
+                width: 10,
+                height: 20
+              },
+              shadowOpacity: 0.25,
+              shadowRadius: 4,
+              elevation: 5,
+              top:1060,
+              left:-840,
+              width: 250,
+              height: 350
+            }}>
+              <Image
+                source={require("../assets/cars/BMWi8.jpeg")}
+                style={{
+                  height: 135,
+                  width: 200,
+                  top: -20
+                }}
+              />
+              <View style={{ padding: 10, width: 200 }}>
+                <Text style={styles.input1}>BMW i8</Text>
+                <Text style={styles.input2}>
+                  Transmission type: Auto
+                </Text>
+                <Text style={styles.input2}>
+                  Fuel type: Petrol
+                </Text>
+                <Text style={styles.input2}>
+                  Color:Black
+                </Text>
+                <Text style={styles.input2}>
+                  No of passengers : 2
+                </Text>
+                <Pressable
+                  style={[styles.button, styles.buttonClose]}
+                  onPress={() => { navigation.navigate("BuyVehicle"), setModalVisible(!modalVisible) }}
+                >
+                  <Text style={styles.textStyle}>Buy Now</Text>
+                </Pressable>
+              </View>
+            </View>
+            <View style={{
+              margin: 20,
+              backgroundColor: "white",
+              borderRadius: 20,
+              padding: 35,
+              alignItems: "center",
+              shadowColor: "#000",
+              shadowOffset: {
+                width: 10,
+                height: 20
+              },
+              shadowOpacity: 0.25,
+              shadowRadius: 4,
+              elevation: 5,
+              top:670,
+              left:-570,
+              width: 250,
+              height: 350
+            }}>
+              <Image
+                source={require("../assets/cars/Mercedes.jpeg")}
+                style={{
+                  height: 135,
+                  width: 200,
+                  top: -20
+                }}
+              />
+              <View style={{ padding: 10, width: 200 }}>
+                <Text style={styles.input1}>Mercedes</Text>
+                <Text style={styles.input2}>
+                  Transmission type: Auto
+                </Text>
+                <Text style={styles.input2}>
+                  Fuel type: Petrol
+                </Text>
+                <Text style={styles.input2}>
+                  Color: White
+                </Text>
+                <Text style={styles.input2}>
+                  No of passengers : 2
+                </Text>
+                <Pressable
+                  style={[styles.button, styles.buttonClose]}
+                  onPress={() => { navigation.navigate("BuyVehicle"), setModalVisible(!modalVisible) }}
+                >
+                  <Text style={styles.textStyle}>Buy Now</Text>
+                </Pressable>
+              </View>
+            </View>
+            <View style={{
+              margin: 20,
+              backgroundColor: "white",
+              borderRadius: 20,
+              padding: 35,
+              alignItems: "center",
+              shadowColor: "#000",
+              shadowOffset: {
+                width: 10,
+                height: 20
+              },
+              shadowOpacity: 0.25,
+              shadowRadius: 4,
+              elevation: 5,
+              top:280,
+              left:-300,
+              width: 250,
+              height: 350
+            }}>
+              <Image
+                source={require("../assets/cars/audi.jpeg")}
+                style={{
+                  height: 135,
+                  width: 200,
+                  top: -20
+                }}
+              />
+              <View style={{ padding: 10, width: 200 }}>
+                <Text style={styles.input1}>Audi</Text>
+                <Text style={styles.input2}>
+                  Transmission type:  Auto
+                </Text>
+                <Text style={styles.input2}>
+                  Fuel type: Petrol
+                </Text>
+                <Text style={styles.input2}>
+                  Color: Ash
+                </Text>
+                <Text style={styles.input2}>
+                  No of passengers : 5
+                </Text>
+                <Pressable
+                  style={[styles.button, styles.buttonClose]}
+                  onPress={() => { navigation.navigate("BuyVehicle"), setModalVisible(!modalVisible) }}
+                >
+                  <Text style={styles.textStyle}>Buy Now</Text>
+                </Pressable>
+              </View>
+            </View>
+            <View style={{
+              margin: 20,
+              backgroundColor: "white",
+              borderRadius: 20,
+              padding: 35,
+              alignItems: "center",
+              shadowColor: "#000",
+              shadowOffset: {
+                width: 10,
+                height: 20
+              },
+              shadowOpacity: 0.25,
+              shadowRadius: 4,
+              elevation: 5,
+              top:-110,
+              left:-30,
+              width: 250,
+              height: 350
+            }}>
+              <Image
+                source={require("../assets/cars/ToyotaPremio.jpeg")}
+                style={{
+                  height: 135,
+                  width: 200,
+                  top: -20
+                }}
+              />
+              <View style={{ padding: 10, width: 200 }}>
+                <Text style={styles.input1}>Toyota Premio</Text>
+                <Text style={styles.input2}>
+                  Transmission type:  Auto
+                </Text>
+                <Text style={styles.input2}>
+                  Fuel type: Petrol
+                </Text>
+                <Text style={styles.input2}>
+                  Color: Green
+                </Text>
+                <Text style={styles.input2}>
+                  No of passengers : 5
+                </Text>
+                <Pressable
+                  style={[styles.button, styles.buttonClose]}
+                  onPress={() => { navigation.navigate("BuyVehicle"), setModalVisible(!modalVisible) }}
+                >
+                  <Text style={styles.textStyle}>Buy Now</Text>
+                </Pressable>
+              </View>
+            </View>
+          </View>
           
 
         </ScrollView>
