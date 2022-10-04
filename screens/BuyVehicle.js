@@ -1,4 +1,4 @@
-import { Radio, Pressable, ActivityIndicator, View, Overlay, Text, TextInput, Button, StyleSheet, TouchableOpacity, Card, Box, Image, ImageBackground, ListItem, ScrollView, SafeAreaView, Surface, Stack } from 'react-native'
+import { Radio, Pressable,Alert, View, Overlay, Text, TextInput, Button, StyleSheet, TouchableOpacity, Card, Box, Image, ImageBackground, ListItem, ScrollView, SafeAreaView, Surface, Stack } from 'react-native'
 import React, { useState } from 'react'
 import { Picker } from "@react-native-picker/picker";
 import RadioGroup from 'react-native-radio-buttons-group';
@@ -12,6 +12,11 @@ export default function BuyVehicle() {
   const [payment, setPayment] = useState('Unknown')
 
   const [value, setValue] = React.useState('first');
+
+  const simpleAlertHandler = () => {
+    alert('Payment Succefully');
+  };
+
 
   return (
     <SafeAreaView style={{ flex: 1 }}>
@@ -83,7 +88,7 @@ export default function BuyVehicle() {
 
         <Pressable
           style={[styles.button, styles.buttonClose]}
-          onPress={() => { navigation.navigate("BuyVehicle"), setModalVisible(!modalVisible) }}
+         title="Simple Alert" onPress={simpleAlertHandler}
         >
           <Text style={styles.textStyle}>Pay Now</Text>
         </Pressable>
