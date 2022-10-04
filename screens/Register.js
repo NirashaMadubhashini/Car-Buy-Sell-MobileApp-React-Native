@@ -1,4 +1,4 @@
-import { View, Text, TextInput, Button, StyleSheet, TouchableOpacity, Image } from 'react-native'
+import { View, Text, TextInput, Button, StyleSheet, TouchableOpacity, Image,Alert, } from 'react-native'
 import React, { useState } from 'react'
 
 
@@ -9,6 +9,11 @@ export default function Register({navigation}) {
   const [phoneNumber, setPhoneNumber] = useState('');
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+
+  const simpleAlertHandler = () => {
+    alert('Register Succefully');
+  };
+
 
   const saveData = () => {
       fetch('https://jsonplaceholder.typicode.com/posts', {
@@ -43,7 +48,9 @@ export default function Register({navigation}) {
       <TextInput style={styles.input2} value={password} onChangeText={(e) => { setPassword(e) }} placeholder='Password' />
       <TouchableOpacity
         style={styles.btn}
-        onPress={()=>{navigation.navigate("Login"),{saveData}}}>
+        // onPress={()=>{navigation.navigate("Login"),{saveData},{simpleAlertHandler}}}
+        title="Simple Alert" onPress={simpleAlertHandler}
+        >
         <Text style={{ color: '#ffff', fontSize: 20 }}>Sign Up</Text>
       </TouchableOpacity>
     </View>
