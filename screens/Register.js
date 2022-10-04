@@ -36,11 +36,11 @@ export default function Register({navigation}) {
     <View style={styles.container}>
       <Text style={{fontSize:35,justifyContent: 'center',color:"black",fontWeight:'bold',paddingTop: '15%',fontFamily: 'Roboto'}}>Register</Text>
       <Image style={styles.tinyLogo}source={require('../assets/icon/Register.png')} />
-      <TextInput style={styles.input1}  value={title} onChangeText={(e) => { setTitle(e) }} placeholder='Full Name'/>
-      <TextInput style={styles.input2} placeholder='Email' />
-      <TextInput style={styles.input2} placeholder='Phone Number' />
-      <TextInput style={styles.input2} placeholder='Username' />
-      <TextInput style={styles.input2} placeholder='Password' />
+      <TextInput style={styles.input1}  value={fullName} onChangeText={(e) => { setFullName(e) }} placeholder='Full Name'/>
+      <TextInput style={styles.input2} value={email} onChangeText={(e) => { setEmail(e) }} placeholder='Email' />
+      <TextInput style={styles.input2} value={phoneNumber} onChangeText={(e) => { setPhoneNumber(e) }} placeholder='Phone Number' />
+      <TextInput style={styles.input2} value={username} onChangeText={(e) => { setUsername(e) }} placeholder='Username' />
+      <TextInput style={styles.input2} value={password} onChangeText={(e) => { setPassword(e) }} placeholder='Password' />
       <TouchableOpacity
         style={styles.btn}
         onPress={()=>{navigation.navigate("Login"),{saveData}}}>
