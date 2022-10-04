@@ -1,18 +1,20 @@
-import {ActivityIndicator,View, Overlay,Text, TextInput, Button, StyleSheet, TouchableOpacity, Card,Box, Image, ImageBackground, ListItem, ScrollView, SafeAreaView,Surface, Stack } from 'react-native'
-import React  ,{ useState } from 'react'
+import { ActivityIndicator, View, Overlay, Text, TextInput, Button, StyleSheet, TouchableOpacity, Card, Box, Image, ImageBackground, ListItem, ScrollView, SafeAreaView, Surface, Stack } from 'react-native'
+import React, { useState } from 'react'
 
 
 export default function BuyVehicle() {
   return (
+    <SafeAreaView style={{ flex: 1 }}>
     <View style={styles.container}>
-  
+      <Text style={{ fontSize: 20, justifyContent: 'center', color: "black", fontWeight: 'bold', paddingTop: '9%', left: -65 }}>Purchase Vehicle</Text>
       <TextInput style={styles.input1} placeholder='Full Name' />
       <TextInput style={styles.input2} placeholder='Email' />
       <TextInput style={styles.input2} placeholder='Phone Number' />
       <TextInput style={styles.input2} placeholder='Username' />
       <TextInput style={styles.input2} placeholder='Password' />
-   
-  </View>
+
+    </View>
+    </SafeAreaView>
   )
 }
 
