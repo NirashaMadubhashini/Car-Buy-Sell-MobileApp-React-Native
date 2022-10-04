@@ -1,6 +1,8 @@
-import { Pressable,ActivityIndicator, View, Overlay, Text, TextInput, Button, StyleSheet, TouchableOpacity, Card, Box, Image, ImageBackground, ListItem, ScrollView, SafeAreaView, Surface, Stack } from 'react-native'
+import { Radio, Pressable, ActivityIndicator, View, Overlay, Text, TextInput, Button, StyleSheet, TouchableOpacity, Card, Box, Image, ImageBackground, ListItem, ScrollView, SafeAreaView, Surface, Stack } from 'react-native'
 import React, { useState } from 'react'
 import { Picker } from "@react-native-picker/picker";
+import RadioGroup from 'react-native-radio-buttons-group';
+import { RadioButton } from 'react-native-paper';
 
 export default function BuyVehicle() {
 
@@ -8,6 +10,8 @@ export default function BuyVehicle() {
   const [transmission, setTransmission] = useState('Unknown');
   const [fuel, setFuel] = useState('Unknown');
   const [payment, setPayment] = useState('Unknown')
+
+  const [value, setValue] = React.useState('first');
 
   return (
     <SafeAreaView style={{ flex: 1 }}>
@@ -41,24 +45,28 @@ export default function BuyVehicle() {
           mode="dropdown" // Android only
           style={styles.picker}
         >
-          <Picker.Item label="Select Transmission type" value="Unknown" />
+          <Picker.Item label="Select the Transmission type" value="Unknown" />
           <Picker.Item label="Auto" value="Auto" />
           <Picker.Item label="Manual" value="Manual" />
         </Picker>
 
-        <Picker
-          selectedValue={fuel}
-          onValueChange={(value, index) => setFuel(value)}
-          mode="dropdown" // Android only
-          style={styles.picker}
-        >
-          <Picker.Item label="Select Fuel Type" value="Unknown" />
-          <Picker.Item label="Petrol" value="Petrol" />
-          <Picker.Item label="Diesel" value="Diesel" />
-        </Picker>
+        <View style={styles.radioButton}>
+        <Text style={{fontSize:18,color:"black",fontFamily: 'notoserif',left:10}}>Fuel Type</Text>
+          <RadioButton.Group onValueChange={value => setValue(value)} value={value}>
+            <RadioButton.Item
+              label="Petrol" value="first"
+            />
 
+            <RadioButton.Item
+              label="Diesel" value="second"
+            />
+          </RadioButton.Group>
+        </View>
+
+      
 
         <TextInput style={styles.input1} placeholder='Colour' />
+
 
         <Picker
           selectedValue={payment}
@@ -104,12 +112,12 @@ const styles = StyleSheet.create({
     backgroundColor: "#000000c0"
   },
   input1: {
-    marginTop: '5%',
+    marginTop: '10%',
     borderWidth: 1,
     padding: 10,
     width: '80%',
-    borderRadius: 10
-
+    borderRadius: 10,
+    left:-10
   },
   input2: {
     marginTop: '5%',
@@ -125,6 +133,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: "black",
     marginTop: '5%',
+    left: -18
   },
   button: {
     borderRadius: 10,
@@ -132,7 +141,7 @@ const styles = StyleSheet.create({
     elevation: 2,
     top: 45,
     width: 200,
-    left:-10
+    left: -10
   },
   buttonOpen: {
     backgroundColor: "#2196F3",
@@ -147,5 +156,13 @@ const styles = StyleSheet.create({
     color: "white",
     fontWeight: "bold",
     textAlign: "center"
+  },
+  radioButton: {
+    top: 25,
+    left: -108,
+  },
+  radioButton2: {
+    top: 45,
+    left: -105
   },
 });
