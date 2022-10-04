@@ -1,5 +1,5 @@
 import { View, Text, TextInput, Button, StyleSheet, TouchableOpacity, Image } from 'react-native'
-import React from 'react'
+import React, { useState } from 'react'
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import AddVehicle from '../screens/AddVehicle'

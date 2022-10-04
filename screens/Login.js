@@ -1,5 +1,5 @@
 import { View, Text, TextInput, Button, StyleSheet, TouchableOpacity, Image,ImageBackground} from 'react-native'
-import React from 'react'
+import React, { useState } from 'react'
 import { Divider} from "@react-native-material/core";
 
 export default function Login({ navigation }) {

@@ -1,5 +1,5 @@
 import { View, Text, TextInput, Button, StyleSheet, TouchableOpacity, Image, ImageBackground, ScrollView, SafeAreaView } from 'react-native'
-import React from 'react'
+import React, { useState } from 'react'
 
 
 export default function AddVehicle() {
