@@ -7,6 +7,8 @@ export default function AddVehicle() {
     <SafeAreaView style={{ flex:1}}>
       <ScrollView>
     <View style={styles.container}>
+    <Text style={{ fontSize: 20, justifyContent: 'center', color: "black", fontWeight: 'bold', paddingTop: '9%', justifyContent: 'center',
+    alignItems: 'center' }}>Add New Vehicle</Text>
       <TextInput style={styles.input1} placeholder='Registration number.' />
       <TextInput style={styles.input2} placeholder='Brand' />
       <TextInput style={styles.input2} placeholder='Transmission type' />
