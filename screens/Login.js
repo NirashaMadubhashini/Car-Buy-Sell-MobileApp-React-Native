@@ -7,7 +7,7 @@ export default function Login({ navigation }) {
   return (
     <View style={styles.container}>
       <Text style={{fontSize:35,justifyContent: 'center',color:"black",fontWeight:'bold',paddingTop: '15%'}}>Login</Text>
-      <Image style={styles.tinyLogo}source={require('../assets/my-icon.png')} />
+      <Image style={styles.tinyLogo}source={require('../assets/icon/user4.png')} />
       <TextInput style={styles.input1} placeholder='Username' />
       <TextInput style={styles.input2} placeholder='Password' />
       <TouchableOpacity
@@ -48,7 +48,7 @@ const styles = StyleSheet.create({
   btn: {
     width: '60%',
     padding: 5,
-    backgroundColor: "#02367D",
+    backgroundColor: "#0266D6",
     height: 50,
     alignItems: 'center',
     justifyContent: 'center',
@@ -58,7 +58,7 @@ const styles = StyleSheet.create({
   btn2: {
     width: '60%',
     padding:5,
-    backgroundColor: "#4cd137",
+    backgroundColor: "#0EAF52",
     height: 50,
     alignItems: 'center',
     justifyContent: 'center',
