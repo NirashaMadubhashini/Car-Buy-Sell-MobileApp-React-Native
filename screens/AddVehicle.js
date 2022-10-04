@@ -1,9 +1,11 @@
-import { View, Text, TextInput, Button, StyleSheet, TouchableOpacity, Image, ImageBackground } from 'react-native'
+import { View, Text, TextInput, Button, StyleSheet, TouchableOpacity, Image, ImageBackground, ScrollView, SafeAreaView } from 'react-native'
 import React from 'react'
 
 
 export default function AddVehicle() {
   return (
+    <SafeAreaView style={{ flex:1}}>
+      <ScrollView>
     <View style={styles.container}>
       <TextInput style={styles.input1} placeholder='Registration number.' />
       <TextInput style={styles.input2} placeholder='Brand' />
@@ -11,6 +13,7 @@ export default function AddVehicle() {
       <TextInput style={styles.input2} placeholder='Fuel Type' />
       <TextInput style={styles.input2} placeholder='Color' />
       <TextInput style={styles.input2} placeholder='Number of passengers' />
+      <TextInput style={styles.input2} placeholder='Price' />
       <TouchableOpacity style={styles.button}>
       <Image 
           source={require('../assets/icon/upload1.png')} 
@@ -23,6 +26,8 @@ export default function AddVehicle() {
         <Text style={{ color: '#ffff', fontSize: 20, }}>Save Vehicle</Text>
       </TouchableOpacity>  
     </View>
+    </ScrollView>
+    </SafeAreaView>
   )
 }
 

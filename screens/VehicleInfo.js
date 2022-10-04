@@ -50,6 +50,9 @@ export default function VehicleInfo({ navigation }) {
                 <Text style={styles.input2}>
                   No of passengers : 7
                 </Text>
+                <Text style={styles.input2}>
+                  Price : Rs. 2,575,000
+                </Text>
                 <Pressable
                   style={[styles.button, styles.buttonClose]}
                   onPress={() => { navigation.navigate("BuyVehicle"), setModalVisible(!modalVisible) }}
@@ -98,6 +101,9 @@ export default function VehicleInfo({ navigation }) {
                 </Text>
                 <Text style={styles.input2}>
                   No of passengers : 8
+                </Text>
+                <Text style={styles.input2}>
+                  Price :Rs. 2,575,000.
                 </Text>
                 <Pressable
                   style={[styles.button, styles.buttonClose]}
@@ -148,6 +154,9 @@ export default function VehicleInfo({ navigation }) {
                 <Text style={styles.input2}>
                   No of passengers : 5
                 </Text>
+                <Text style={styles.input2}>
+                  Price : Rs 4,090,000
+                </Text>
                 <Pressable
                   style={[styles.button, styles.buttonClose]}
                   onPress={() => { navigation.navigate("BuyVehicle"), setModalVisible(!modalVisible) }}
@@ -184,7 +193,7 @@ export default function VehicleInfo({ navigation }) {
                 }}
               />
               <View style={{ padding: 10, width: 200 }}>
-                <Text style={styles.input1}>Suzuki Celerio</Text>
+                <Text style={styles.input1}>Perodua Axia</Text>
                 <Text style={styles.input2}>
                   Transmission type:  Auto
                 </Text>
@@ -192,10 +201,13 @@ export default function VehicleInfo({ navigation }) {
                   Fuel type: Petrol
                 </Text>
                 <Text style={styles.input2}>
-                  Color: Blue
+                  Color: White
                 </Text>
                 <Text style={styles.input2}>
                   No of passengers : 5
+                </Text>
+                <Text style={styles.input2}>
+                  Price : Rs 4,600,000
                 </Text>
                 <Pressable
                   style={[styles.button, styles.buttonClose]}
@@ -250,6 +262,9 @@ export default function VehicleInfo({ navigation }) {
                 <Text style={styles.input2}>
                   No of passengers : 4
                 </Text>
+                <Text style={styles.input2}>
+                  Price : Rs. 9,500,000
+                </Text>
                 <Pressable
                   style={[styles.button, styles.buttonClose]}
                   onPress={() => { navigation.navigate("BuyVehicle"), setModalVisible(!modalVisible) }}
@@ -288,7 +303,7 @@ export default function VehicleInfo({ navigation }) {
               <View style={{ padding: 10, width: 200 }}>
                 <Text style={styles.input1}>Perodua Bezza</Text>
                 <Text style={styles.input2}>
-                  Transmission type: Auto (2017)
+                  Transmission type: Auto
                 </Text>
                 <Text style={styles.input2}>
                   Fuel type: Petrol
@@ -298,6 +313,9 @@ export default function VehicleInfo({ navigation }) {
                 </Text>
                 <Text style={styles.input2}>
                   No of passengers : 5
+                </Text>
+                <Text style={styles.input2}>
+                  Price : Rs. 5,600,000
                 </Text>
                 <Pressable
                   style={[styles.button, styles.buttonClose]}
@@ -348,6 +366,9 @@ export default function VehicleInfo({ navigation }) {
                 <Text style={styles.input2}>
                   No of passengers : 3
                 </Text>
+                <Text style={styles.input2}>
+                  Price : Rs.6,750,000
+                </Text>
                 <Pressable
                   style={[styles.button, styles.buttonClose]}
                   onPress={() => { navigation.navigate("BuyVehicle"), setModalVisible(!modalVisible) }}
@@ -384,7 +405,7 @@ export default function VehicleInfo({ navigation }) {
                 }}
               />
               <View style={{ padding: 10, width: 200 }}>
-                <Text style={styles.input1}>Suzuki Celerio</Text>
+                <Text style={styles.input1}>Toyota Axio NKR</Text>
                 <Text style={styles.input2}>
                   Transmission type:  Auto
                 </Text>
@@ -392,10 +413,13 @@ export default function VehicleInfo({ navigation }) {
                   Fuel type: Petrol
                 </Text>
                 <Text style={styles.input2}>
-                  Color: Blue
+                  Color: Red
                 </Text>
                 <Text style={styles.input2}>
                   No of passengers : 5
+                </Text>
+                <Text style={styles.input2}>
+                  Price : Rs.5,790,000
                 </Text>
                 <Pressable
                   style={[styles.button, styles.buttonClose]}
@@ -452,6 +476,9 @@ export default function VehicleInfo({ navigation }) {
                 <Text style={styles.input2}>
                   No of passengers : 2
                 </Text>
+                <Text style={styles.input2}>
+                  Price : Rs.30,000,000
+                </Text>
                 <Pressable
                   style={[styles.button, styles.buttonClose]}
                   onPress={() => { navigation.navigate("BuyVehicle"), setModalVisible(!modalVisible) }}
@@ -500,6 +527,9 @@ export default function VehicleInfo({ navigation }) {
                 </Text>
                 <Text style={styles.input2}>
                   No of passengers : 2
+                </Text>
+                <Text style={styles.input2}>
+                  Price : Rs.25,500,000
                 </Text>
                 <Pressable
                   style={[styles.button, styles.buttonClose]}
@@ -550,6 +580,9 @@ export default function VehicleInfo({ navigation }) {
                 <Text style={styles.input2}>
                   No of passengers : 5
                 </Text>
+                <Text style={styles.input2}>
+                  Price : Rs.19,852,700
+                </Text>
                 <Pressable
                   style={[styles.button, styles.buttonClose]}
                   onPress={() => { navigation.navigate("BuyVehicle"), setModalVisible(!modalVisible) }}
@@ -599,6 +632,9 @@ export default function VehicleInfo({ navigation }) {
                 <Text style={styles.input2}>
                   No of passengers : 5
                 </Text>
+                <Text style={styles.input2}>
+                  Price : Rs.13,750,000
+                </Text>
                 <Pressable
                   style={[styles.button, styles.buttonClose]}
                   onPress={() => { navigation.navigate("BuyVehicle"), setModalVisible(!modalVisible) }}
@@ -640,9 +676,9 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     padding: 10,
     elevation: 2,
-    top: -5,
+    top: -10,
     width: 200,
-    justifyContent: "center",
+    left:-10
   },
   buttonOpen: {
     backgroundColor: "#2196F3",
