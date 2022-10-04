@@ -13,10 +13,10 @@ export default function AddVehicle() {
       <TextInput style={styles.input2} placeholder='Number of passengers' />
       <TouchableOpacity style={styles.button}>
       <Image 
-          source={require('../assets/icon/up.png')} 
-          style={{ width: 25, height: 25 ,left:85,top:15}}
+          source={require('../assets/icon/upload1.png')} 
+          style={{ width: 25, height: 25 ,left:-50,top:10}}
           />
-          <Text style={{ color: 'black', fontSize: 20,right:30,top:-15 }}>Upload Image</Text>
+          <Text style={{ color: '#ffff', fontSize: 20,left:10,top:-15 }}>Upload</Text>
       </TouchableOpacity>
       <TouchableOpacity
         style={styles.btn}>
@@ -47,9 +47,9 @@ const styles = StyleSheet.create({
     borderRadius: 20
   },
   btn: {
-    width: '60%',
+    width: '80%',
     padding: 5,
-    backgroundColor: "#452382",
+    backgroundColor: "#23B671",
     height: 50,
     alignItems: 'center',
     justifyContent: 'center',
@@ -57,9 +57,9 @@ const styles = StyleSheet.create({
     borderRadius: 20
   },
   button: {
-    width: '80%',
+    width: '50%',
     padding:5,
-    backgroundColor: "#BF8700",
+    backgroundColor: "#274BF7",
     height: 50,
     alignItems: 'center',
     justifyContent: 'center',
