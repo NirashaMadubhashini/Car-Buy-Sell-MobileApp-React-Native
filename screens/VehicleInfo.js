@@ -7,7 +7,7 @@ export default function VehicleInfo({ navigation }) {
     <SafeAreaView style={{ flex: 1 }}>
       <ScrollView contentContainerStyle={{ height: 1350 }}>
         <ScrollView horizontal contentContainerStyle={{ width: 1090 }}>
-          <Text style={{ fontSize: 20, justifyContent: 'center', color: "black", fontWeight: 'bold', paddingTop: '3%', left: 20 }}>General Cars</Text>
+          <Text style={{ fontSize: 20, justifyContent: 'center', color: "black", fontWeight: 'bold', paddingTop: '3%', left: 20,fontFamily: 'notoserif'}}>General Cars</Text>
           <View style={{ flex: 1, justifyContent: "center" }}>
             <View style={{
               margin: 20,
@@ -219,7 +219,7 @@ export default function VehicleInfo({ navigation }) {
             </View>
           </View>
 
-          <Text style={{ fontSize: 20, justifyContent: 'center', color: "black", fontWeight: 'bold', paddingTop: '45%', left: -340 }}>Premium Cars</Text>
+          <Text style={{ fontSize: 20, justifyContent: 'center', color: "black", fontWeight: 'bold', paddingTop: '45%', left: -340,fontFamily: 'notoserif'}}>Premium Cars</Text>
           <View style={{ flex: 1, justifyContent: "center" }}>
             <View style={{
               margin: 20,
@@ -433,7 +433,7 @@ export default function VehicleInfo({ navigation }) {
 
 
 
-          <Text style={{ fontSize: 20, justifyContent: 'center', color: "black", fontWeight: 'bold', paddingTop: '85%', left: -710 }}>Luxury Cars</Text>
+          <Text style={{ fontSize: 20, justifyContent: 'center', color: "black", fontWeight: 'bold', paddingTop: '85%', left: -710,fontFamily: 'notoserif' }}>Luxury Cars</Text>
           <View style={{ flex: 1, justifyContent: "center" }}>
             <View style={{
               margin: 20,
@@ -702,11 +702,13 @@ const styles = StyleSheet.create({
     fontSize: 20,
     color: "black",
     fontWeight: 'bold',
-    top: -20
+    top: -20,
+    fontFamily: 'normal'
   },
   input2: {
     fontSize: 15,
     color: "black",
-    top: -20
+    top: -20,
+    fontFamily: 'normal'
   }
 });

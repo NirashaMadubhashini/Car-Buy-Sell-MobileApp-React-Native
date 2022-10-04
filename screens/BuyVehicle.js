@@ -6,7 +6,7 @@ export default function BuyVehicle() {
   return (
     <SafeAreaView style={{ flex: 1 }}>
     <View style={styles.container}>
-      <Text style={{ fontSize: 20, justifyContent: 'center', color: "black", fontWeight: 'bold', paddingTop: '9%', left: -65 }}>Purchase Vehicle</Text>
+      <Text style={{ fontSize: 20, justifyContent: 'center', color: "black", fontWeight: 'bold', paddingTop: '9%', left: -65,fontFamily: 'notoserif' }}>Purchase Vehicle</Text>
       <TextInput style={styles.input1} placeholder='Full Name' />
       <TextInput style={styles.input2} placeholder='Email' />
       <TextInput style={styles.input2} placeholder='Phone Number' />

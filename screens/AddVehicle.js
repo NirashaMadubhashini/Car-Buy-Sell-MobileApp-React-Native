@@ -7,7 +7,7 @@ export default function AddVehicle() {
     <SafeAreaView style={{ flex: 1 }}>
       <ScrollView>
         <View style={styles.container}>
-          <Text style={{ fontSize: 20, justifyContent: 'center', color: "black", fontWeight: 'bold', paddingTop: '9%', left: -65 }}>Add New Vehicle</Text>
+          <Text style={{ fontSize: 20, justifyContent: 'center', color: "black", fontWeight: 'bold', paddingTop: '9%', left: -65,fontFamily: 'notoserif' }}>Add New Vehicle</Text>
           <TextInput style={styles.input1} placeholder='Registration number.' />
           <TextInput style={styles.input2} placeholder='Brand' />
           <TextInput style={styles.input2} placeholder='Transmission type' />
@@ -42,7 +42,8 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     padding: 10,
     width: '80%',
-    borderRadius: 10
+    borderRadius: 10,
+    fontFamily: 'normal'
 
   },
   input2: {
@@ -50,7 +51,8 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     padding: 10,
     width: '80%',
-    borderRadius: 10
+    borderRadius: 10,
+    fontFamily: 'normal'
   },
   btn: {
     width: '80%',

@@ -8,7 +8,7 @@ export default function Home() {
     <SafeAreaView style={{ flex:1}}>
       <ScrollView>
         <View style={{ flex: 1, justifyContent: "center" }}>
-        <Text style={{fontSize:20,justifyContent: 'center',color:"black",fontWeight:'bold',paddingTop: '9%',left:20}}>Buy And Sell Your Cars Here</Text>
+        <Text style={{fontSize:20,justifyContent: 'center',color:"black",fontWeight:'bold',paddingTop: '9%',left:20,fontFamily: 'notoserif'}}>Buy And Sell Your Cars Here</Text>
           <View style={{ backgroundColor: "#8F8A87", borderRadius: 10, overflow: "hidden", height: 250, width: 160, left: 15, top: 20 }}>
             <View>
               <Image
@@ -43,7 +43,7 @@ export default function Home() {
               </Text>
             </View>
           </View>
-          <Text style={{fontSize:20,justifyContent: 'center',color:"black",fontWeight:'bold',top:-200,left:25}}>Active Promotions</Text>
+          <Text style={{fontSize:20,justifyContent: 'center',color:"black",fontWeight:'bold',top:-200,left:25,fontFamily: 'notoserif'}}>Active Promotions</Text>
           <View style={{ backgroundColor: "#9E9B9F", borderRadius: 10, overflow: "hidden", height: 250, width: 330, left: 15, top: -180 }}>
             <View>
               <Image
@@ -104,7 +104,7 @@ export default function Home() {
               </Text>
             </View>
           </View>
-          <Text style={{fontSize:20,justifyContent: 'center',color:"black",fontWeight:'bold',top:-130,left:25}}>Top Dealers</Text>
+          <Text style={{fontSize:20,justifyContent: 'center',color:"black",fontWeight:'bold',top:-130,left:25,fontFamily: 'notoserif'}}>Top Dealers</Text>
           <View style={{borderRadius: 10, overflow: "hidden", height: 100, width: 150, left: 15, top: -100 }}>
             <View>
               <Image
@@ -184,13 +184,16 @@ const styles = StyleSheet.create({
     fontSize: 20,
     color: "black",
     fontWeight: 'bold',
+    fontFamily: 'Roboto'
   },
   input2: {
     fontSize: 15,
     color: "black",
+    fontFamily: 'Roboto'
   },
   input3: {
     fontSize: 12,
     color: "black",
+    fontFamily: 'Roboto'
   }
 })

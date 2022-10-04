@@ -1,12 +1,11 @@
 import { View, Text, TextInput, Button, StyleSheet, TouchableOpacity, Image,ImageBackground} from 'react-native'
 import React from 'react'
 import { Divider} from "@react-native-material/core";
-import Montserrat from '../assets/fonts/Montserrat.ttf'
 
 export default function Login({ navigation }) {
   return (
     <View style={styles.container}>
-      <Text style={{fontSize:35,justifyContent: 'center',color:"black",fontWeight:'bold',paddingTop: '15%',fontFamily:'Montserrat'}}>Login</Text>
+      <Text style={{fontSize:35,justifyContent: 'center',color:"black",fontWeight:'bold',paddingTop: '15%',fontFamily: 'Roboto' }}>Login</Text>
       <Image style={styles.tinyLogo}source={require('../assets/icon/user3.png')} />
       <TextInput style={styles.input1} placeholder='Username' />
       <TextInput style={styles.input2} placeholder='Password' />
@@ -31,7 +30,8 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     padding: 10,
     width: '80%',
-    borderRadius: 20
+    borderRadius: 20,
+    fontFamily: 'Roboto'
 
   },
   input2: {
@@ -39,7 +39,8 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     padding: 10,
     width: '80%',
-    borderRadius: 20
+    borderRadius: 20,
+    fontFamily: 'Roboto'
   },
   container: {
     justifyContent: 'center',
@@ -53,7 +54,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     marginTop: '5%',
-    borderRadius: 20
+    borderRadius: 20,
+    
   },
   btn2: {
     width: '60%',

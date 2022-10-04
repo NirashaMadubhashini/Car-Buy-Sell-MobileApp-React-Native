@@ -6,7 +6,7 @@ export default function Register({navigation}) {
   
   return (
     <View style={styles.container}>
-      <Text style={{fontSize:35,justifyContent: 'center',color:"black",fontWeight:'bold',paddingTop: '15%'}}>Register</Text>
+      <Text style={{fontSize:35,justifyContent: 'center',color:"black",fontWeight:'bold',paddingTop: '15%',fontFamily: 'Roboto'}}>Register</Text>
       <TextInput style={styles.input1} placeholder='Full Name' />
       <TextInput style={styles.input2} placeholder='Email' />
       <TextInput style={styles.input2} placeholder='Phone Number' />
@@ -27,7 +27,8 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     padding: 10,
     width: '80%',
-    borderRadius: 20
+    borderRadius: 20,
+    fontFamily: 'Roboto'
 
   },
   input2: {
