@@ -59,7 +59,7 @@ const styles = StyleSheet.create({
     height: 50,
     alignItems: 'center',
     justifyContent: 'center',
-    marginTop: '5%',
+    marginTop: '3%',
     borderRadius: 20
   },
   button: {
