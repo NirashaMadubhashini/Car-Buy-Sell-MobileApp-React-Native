@@ -1,19 +1,86 @@
-import { ActivityIndicator, View, Overlay, Text, TextInput, Button, StyleSheet, TouchableOpacity, Card, Box, Image, ImageBackground, ListItem, ScrollView, SafeAreaView, Surface, Stack } from 'react-native'
+import { Pressable,ActivityIndicator, View, Overlay, Text, TextInput, Button, StyleSheet, TouchableOpacity, Card, Box, Image, ImageBackground, ListItem, ScrollView, SafeAreaView, Surface, Stack } from 'react-native'
 import React, { useState } from 'react'
-
+import { Picker } from "@react-native-picker/picker";
 
 export default function BuyVehicle() {
+
+  const [brand, setBrand] = useState('Unknown');
+  const [transmission, setTransmission] = useState('Unknown');
+  const [fuel, setFuel] = useState('Unknown');
+  const [payment, setPayment] = useState('Unknown')
+
   return (
     <SafeAreaView style={{ flex: 1 }}>
-    <View style={styles.container}>
-      <Text style={{ fontSize: 20, justifyContent: 'center', color: "black", fontWeight: 'bold', paddingTop: '9%', left: -65,fontFamily: 'notoserif' }}>Purchase Vehicle</Text>
-      <TextInput style={styles.input1} placeholder='Full Name' />
-      <TextInput style={styles.input2} placeholder='Email' />
-      <TextInput style={styles.input2} placeholder='Phone Number' />
-      <TextInput style={styles.input2} placeholder='Username' />
-      <TextInput style={styles.input2} placeholder='Password' />
+      <View style={styles.container}>
+        <Text style={{ fontSize: 20, justifyContent: 'center', color: "black", fontWeight: 'bold', paddingTop: '9%', left: -65, fontFamily: 'notoserif' }}>Purchase Vehicle</Text>
+        <Picker
+          selectedValue={brand}
+          onValueChange={(value, index) => setBrand(value)}
+          mode="dropdown" // Android only
+          style={styles.picker}
+        >
+          <Picker.Item label="Select the Brand" value="Unknown" />
+          <Picker.Item label="Suzuki Alto" value="Suzuki Alto" />
+          <Picker.Item label="Suzuki Alto K10" value="Suzuki Alto K10" />
+          <Picker.Item label="Suzuki Celerio" value="Suzuki Celerio" />
+          <Picker.Item label="Perodua Axia" value="Perodua Axia" />
+          <Picker.Item label="Toyota Corolla Axio" value="Toyota Corolla Axio" />
+          <Picker.Item label="Perodua Bezza" value="Perodua Bezza" />
+          <Picker.Item label="Toyota Allion NZT" value="Toyota Allion NZT" />
+          <Picker.Item label="Toyota Axio NKR" value="Toyota Axio NKR" />
+          <Picker.Item label="BMW i8" value="BMW i8" />
+          <Picker.Item label="Mercedes" value="Mercedes" />
+          <Picker.Item label="Audi" value="Audi" />
+          <Picker.Item label="Toyota Premio" value="Toyota Premio" />
 
-    </View>
+        </Picker>
+
+        <Picker
+          selectedValue={transmission}
+          onValueChange={(value, index) => setTransmission(value)}
+          mode="dropdown" // Android only
+          style={styles.picker}
+        >
+          <Picker.Item label="Select Transmission type" value="Unknown" />
+          <Picker.Item label="Auto" value="Auto" />
+          <Picker.Item label="Manual" value="Manual" />
+        </Picker>
+
+        <Picker
+          selectedValue={fuel}
+          onValueChange={(value, index) => setFuel(value)}
+          mode="dropdown" // Android only
+          style={styles.picker}
+        >
+          <Picker.Item label="Select Fuel Type" value="Unknown" />
+          <Picker.Item label="Petrol" value="Petrol" />
+          <Picker.Item label="Diesel" value="Diesel" />
+        </Picker>
+
+
+        <TextInput style={styles.input1} placeholder='Colour' />
+
+        <Picker
+          selectedValue={payment}
+          onValueChange={(value, index) => setPayment(value)}
+          mode="dropdown" // Android only
+          style={styles.picker}
+        >
+          <Picker.Item label="Select Payment Method" value="Unknown" />
+          <Picker.Item label="Card" value="Card" />
+          <Picker.Item label="Cash" value="Cash" />
+        </Picker>
+
+        <TextInput style={styles.input1} placeholder='Amount' />
+
+        <Pressable
+          style={[styles.button, styles.buttonClose]}
+          onPress={() => { navigation.navigate("BuyVehicle"), setModalVisible(!modalVisible) }}
+        >
+          <Text style={styles.textStyle}>Pay Now</Text>
+        </Pressable>
+
+      </View>
     </SafeAreaView>
   )
 }
@@ -37,7 +104,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#000000c0"
   },
   input1: {
-    marginTop: '10%',
+    marginTop: '5%',
     borderWidth: 1,
     padding: 10,
     width: '80%',
@@ -50,5 +117,35 @@ const styles = StyleSheet.create({
     padding: 10,
     width: '80%',
     borderRadius: 10
+  },
+  picker: {
+    marginVertical: -5,
+    width: 300,
+    padding: 5,
+    borderWidth: 1,
+    borderColor: "black",
+    marginTop: '5%',
+  },
+  button: {
+    borderRadius: 10,
+    padding: 10,
+    elevation: 2,
+    top: 45,
+    width: 200,
+    left:-10
+  },
+  buttonOpen: {
+    backgroundColor: "#2196F3",
+  },
+  buttonClose: {
+    backgroundColor: "green",
+  },
+  buttonExit: {
+    backgroundColor: "red",
+  },
+  textStyle: {
+    color: "white",
+    fontWeight: "bold",
+    textAlign: "center"
   },
 });

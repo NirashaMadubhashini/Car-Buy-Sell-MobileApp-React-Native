@@ -94,7 +94,7 @@ export default function VehicleInfo({ navigation }) {
                   Transmission type:  Auto
                 </Text>
                 <Text style={styles.input2}>
-                  Fuel type: Petrol
+                  Fuel type: Diesel
                 </Text>
                 <Text style={styles.input2}>
                   Color: Orange
@@ -146,7 +146,7 @@ export default function VehicleInfo({ navigation }) {
                   Transmission type:  Auto
                 </Text>
                 <Text style={styles.input2}>
-                  Fuel type: Petrol
+                  Fuel type: Diesel
                 </Text>
                 <Text style={styles.input2}>
                   Color: Blue
@@ -198,7 +198,7 @@ export default function VehicleInfo({ navigation }) {
                   Transmission type:  Auto
                 </Text>
                 <Text style={styles.input2}>
-                  Fuel type: Petrol
+                  Fuel type: Diesel
                 </Text>
                 <Text style={styles.input2}>
                   Color: White
@@ -254,7 +254,7 @@ export default function VehicleInfo({ navigation }) {
                   Transmission type: Manual
                 </Text>
                 <Text style={styles.input2}>
-                  Fuel type: Petrol
+                  Fuel type: Diesel
                 </Text>
                 <Text style={styles.input2}>
                   Color: Light Blue
@@ -358,7 +358,7 @@ export default function VehicleInfo({ navigation }) {
                   Transmission type:  Auto
                 </Text>
                 <Text style={styles.input2}>
-                  Fuel type: Petrol
+                  Fuel type:Diesel
                 </Text>
                 <Text style={styles.input2}>
                   Color: Ash
