@@ -31,7 +31,6 @@ const styles = StyleSheet.create({
     padding: 10,
     width: '80%',
     borderRadius: 20,
-    fontFamily: 'Roboto'
 
   },
   input2: {

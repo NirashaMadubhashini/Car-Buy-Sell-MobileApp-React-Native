@@ -7,6 +7,7 @@ export default function Register({navigation}) {
   return (
     <View style={styles.container}>
       <Text style={{fontSize:35,justifyContent: 'center',color:"black",fontWeight:'bold',paddingTop: '15%',fontFamily: 'Roboto'}}>Register</Text>
+      <Image style={styles.tinyLogo}source={require('../assets/icon/Register.png')} />
       <TextInput style={styles.input1} placeholder='Full Name' />
       <TextInput style={styles.input2} placeholder='Email' />
       <TextInput style={styles.input2} placeholder='Phone Number' />
@@ -54,7 +55,7 @@ const styles = StyleSheet.create({
   },
   tinyLogo: {
     marginTop: '10%',
-    width: 100,
-    height: 100,
+    width: 80,
+    height: 80,
   }
 });
