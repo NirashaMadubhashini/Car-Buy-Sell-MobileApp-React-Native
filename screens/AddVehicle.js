@@ -21,7 +21,7 @@ export default function AddVehicle() {
       <TouchableOpacity
         style={styles.btn}>
         <Text style={{ color: '#ffff', fontSize: 20, }}>Save Vehicle</Text>
-      </TouchableOpacity>
+      </TouchableOpacity>  
     </View>
   )
 }
