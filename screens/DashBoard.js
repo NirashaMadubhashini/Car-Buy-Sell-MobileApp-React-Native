@@ -9,6 +9,8 @@ import { IconComponentProvider, Icon } from "@react-native-material/core";
 import { HomeStackNavigator, ContactStackNavigator } from "./StackNavigator";
 import Home from './Home';
 
+
+
 const Tab = createBottomTabNavigator();
 
 export default function DashBoard() {
@@ -32,6 +34,7 @@ export default function DashBoard() {
         tabBarIcon: () => (<Image source={require("../assets/icon/buy4.png")} style={{ width: 20, height: 20 }} />),header: () => null
       }}
         component={BuyVehicle} />
+
 
     </Tab.Navigator>
   )

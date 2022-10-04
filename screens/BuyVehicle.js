@@ -1,8 +1,9 @@
-import { Radio, Pressable,Alert, View, Overlay, Text, TextInput, Button, StyleSheet, TouchableOpacity, Card, Box, Image, ImageBackground, ListItem, ScrollView, SafeAreaView, Surface, Stack } from 'react-native'
-import React, { useState } from 'react'
+import { TouchableHighlight,Modal, Pressable,Alert, View, Overlay, Text, TextInput, Button, StyleSheet, TouchableOpacity, Card, Box, Image, ImageBackground, ListItem, ScrollView, SafeAreaView, Surface, Stack } from 'react-native'
+import React, { useState,Component} from 'react'
 import { Picker } from "@react-native-picker/picker";
 import RadioGroup from 'react-native-radio-buttons-group';
 import { RadioButton } from 'react-native-paper';
+import PickerModal from 'react-native-picker-modal-view';
 
 export default function BuyVehicle() {
 
@@ -16,6 +17,8 @@ export default function BuyVehicle() {
   const simpleAlertHandler = () => {
     alert('Payment Succefully');
   };
+
+  const [modalVisible, setModalVisible] = useState(true);
 
 
   return (
@@ -68,10 +71,7 @@ export default function BuyVehicle() {
           </RadioButton.Group>
         </View>
 
-      
-
         <TextInput style={styles.input1} placeholder='Colour' />
-
 
         <Picker
           selectedValue={payment}
