@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     padding: 10,
     width: '80%',
-    borderRadius: 20
+    borderRadius: 10
 
   },
   input2: {
@@ -47,6 +47,6 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     padding: 10,
     width: '80%',
-    borderRadius: 20
+    borderRadius: 10
   },
 });
