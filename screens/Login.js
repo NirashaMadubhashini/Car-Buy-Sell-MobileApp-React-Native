@@ -1,15 +1,49 @@
-import { View,Input, FlatList, Text, TextInput, Button, StyleSheet, TouchableOpacity, Image, ImageBackground } from 'react-native'
+import { View, Input, FlatList, Text, TextInput, Button, StyleSheet, TouchableOpacity, Image, ImageBackground } from 'react-native'
 import React, { useState, useEffect } from 'react'
 import { Divider } from "@react-native-material/core";
 
 export default function Login({ navigation }) {
+  
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+
+  loginUser = () => {
+    fetch(`http://192.168.1.100:8000/users/login/${username}/${password}`, {
+      method: "GET",
+      headers: {
+        'content-type': 'application/json'
+      }
+    })
+      .then((response) => response.json())
+      .then((json) => {
+        console.log(json);
+        if (json.length === 0) {
+          Alert.alert("Username or password incorrect.Try again!")
+        } else {
+          clearTextFields()
+          Alert.alert("Login Successful.");
+          navigation.navigate("Dash", {
+            username: json[0].username,
+            fullname: json[0].fullName
+          });
+        }
+      })
+      .catch((err) => console.log(err));
+  }
+
+  clearTextFields = () => {
+    setUsername("");
+    setPassword("");
+  }
+
+
   return (
     <View style={styles.container} >
       <Text style={{ fontSize: 35, justifyContent: 'center', color: "black", fontWeight: 'bold', paddingTop: '15%', fontFamily: 'Roboto' }}>Login</Text>
       <Image style={styles.tinyLogo} source={require('../assets/icon/user3.png')} />
 
-      <TextInput style={styles.input1} placeholder='Username'>Username</TextInput>
-      <TextInput style={styles.input2} placeholder='Password'>Password</TextInput>
+      <TextInput style={styles.input1} value={username} onChangeText={(e) => { setUsername(e) }} placeholder='Username'/>
+      <TextInput style={styles.input2} value={password} onChangeText={(e) => { setPassword(e) }} placeholder='Password'/>
 
 
       <TouchableOpacity

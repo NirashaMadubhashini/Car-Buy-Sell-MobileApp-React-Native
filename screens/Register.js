@@ -3,12 +3,8 @@ import React, { useState } from 'react'
 
 
 export default function Register({ navigation }) {
-  const simpleAlertHandler = () => {
-    alert('Register Succefully');
-  };
-
+  
   const [fullName, setFullName] = useState("");
-  const [email, setEmail] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -16,12 +12,11 @@ export default function Register({ navigation }) {
 
   saveUser = async () => {
 
-    if (fullName != "" && email != "" && phoneNumber != "" && username != "" && password != "") {
+    if (fullName != "" &&  phoneNumber != "" && username != "" && password != "") {
       fetch('http://192.168.1.100:8000/users', {
         method: 'POST',
         body: JSON.stringify({
           fullName: fullName,
-          email: email,
           phoneNumber: phoneNumber,
           username: username,
           password: password
@@ -48,7 +43,6 @@ export default function Register({ navigation }) {
 
   const clearTextFields = () => {
     setFullName("");
-    setEmail("")
     setPhoneNumber("");
     setUsername("");
     setPassword("");
@@ -63,13 +57,11 @@ export default function Register({ navigation }) {
       <Text style={{ fontSize: 35, justifyContent: 'center', color: "black", fontWeight: 'bold', paddingTop: '10%', fontFamily: 'Roboto' }}>Register</Text>
       <Image style={styles.tinyLogo} source={require('../assets/icon/Register.png')} />
       <TextInput style={styles.input1} value={fullName} onChangeText={(e) => {setFullName(e)}} placeholder='Full Name' />
-      <TextInput style={styles.input2} value={email} onChangeText={(e) => { setEmail(e) }} placeholder='Email' />
       <TextInput style={styles.input2} value={phoneNumber} onChangeText={(e) => { setPhoneNumber(e) }} placeholder='Phone Number' />
       <TextInput style={styles.input2} value={username} onChangeText={(e) => { setUsername(e) }} placeholder='Username' />
       <TextInput style={styles.input2} value={password} onChangeText={(e) => { setPassword(e) }} placeholder='Password' />
       <TouchableOpacity
         style={styles.btn}
-        // onPress={()=>{navigation.navigate("Login"),{saveData},{simpleAlertHandler}}}
         onPress={() => { saveUser()}}
       >
         <Text style={{ color: '#ffff', fontSize: 20 }}>Sign Up</Text>
@@ -135,7 +127,7 @@ const styles = StyleSheet.create({
     borderRadius: 100
   },
   tinyLogo: {
-    marginTop: '10%',
+    marginTop: '3%',
     width: 70,
     height: 70,
   },
