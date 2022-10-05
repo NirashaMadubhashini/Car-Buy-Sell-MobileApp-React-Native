@@ -1,14 +1,15 @@
-import { View, Input, FlatList, Text, TextInput, Button, StyleSheet, TouchableOpacity, Image, ImageBackground } from 'react-native'
+import { View, Input, FlatList, Text, TextInput, Button, StyleSheet, TouchableOpacity, Image, ImageBackground,Alert } from 'react-native'
 import React, { useState, useEffect } from 'react'
 import { Divider } from "@react-native-material/core";
 
+
 export default function Login({ navigation }) {
-  
+
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
   loginUser = () => {
-    fetch(`http://192.168.1.100:8000/users/login/${username}/${password}`, {
+    fetch(`http://192.168.8.109:8000/users/login/${username}/${password}`, {
       method: "GET",
       headers: {
         'content-type': 'application/json'
@@ -22,10 +23,11 @@ export default function Login({ navigation }) {
         } else {
           clearTextFields()
           Alert.alert("Login Successful.");
-          navigation.navigate("Dash", {
-            username: json[0].username,
-            fullname: json[0].fullName
-          });
+          // navigation.navigate("Dash", {
+          //   username: json[0].username,
+          //   fullname: json[0].fullName
+          // });
+          navigation.navigate("DashBoard")
         }
       })
       .catch((err) => console.log(err));
@@ -48,7 +50,10 @@ export default function Login({ navigation }) {
 
       <TouchableOpacity
         style={styles.btn}
-        onPress={() => { navigation.navigate("DashBoard") }}>
+        // onPress={() => { navigation.navigate("DashBoard") }}
+        onPress={() => { loginUser() }}
+        // onPress={() => { loginUser() }} 
+        >
         <Text style={{ color: '#ffff', fontSize: 20 }}>Login</Text>
       </TouchableOpacity>
       <Text style={{ fontSize: 20, justifyContent: 'center', color: "black", fontWeight: 'bold', paddingTop: '3%' }}>or</Text>

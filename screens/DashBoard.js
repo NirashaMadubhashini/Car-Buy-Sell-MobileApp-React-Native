@@ -30,11 +30,6 @@ export default function DashBoard() {
         tabBarIcon: () => (<Image source={require("../assets/icon/info.png")} style={{ width: 20, height: 20 }} />),header: () => null
       }}
         component={VehicleInfo} />
-      <Tab.Screen name="BuyVehicle" options={{
-        tabBarIcon: () => (<Image source={require("../assets/icon/buy4.png")} style={{ width: 20, height: 20 }} />),header: () => null
-      }}
-        component={BuyVehicle} />
-
 
     </Tab.Navigator>
   )
