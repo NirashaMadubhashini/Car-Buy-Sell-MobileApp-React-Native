@@ -1,7 +1,7 @@
 import React from "react";
 import { ImageBackground, StyleSheet, Text, View, TouchableOpacity } from "react-native";
 
-const image = { uri: "https://tse4.mm.bing.net/th?id=OIP.eJySIVBwwTZsOQSuezJYxAHaK3&pid=Api&P=0" };
+const image = { uri: "https://tse3.mm.bing.net/th?id=OIP.QO64VUnSdMwR7R2l_HBgFwHaNK&pid=Api&P=0" };
 
 
 export default function welcome({ navigation }) {
@@ -18,7 +18,7 @@ export default function welcome({ navigation }) {
                         }
                     }}
                 >
-                    <Text style={{ color: '#372E55', fontSize: 20, fontWeight: 'bold' }}>Login</Text>
+                    <Text style={{ color: '#131525', fontSize: 20, fontWeight: 'bold' }}>Login</Text>
 
                 </TouchableOpacity>
                 <TouchableOpacity

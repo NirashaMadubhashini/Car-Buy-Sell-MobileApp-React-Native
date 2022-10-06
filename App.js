@@ -5,7 +5,7 @@ import * as React from 'react'
 import Login from './screens/Login'
 import Register from './screens/Register'
 import DashBoard from './screens/DashBoard'
-import Welcome from './screens/welcome';
+import Welcome from './screens/Welcome';
 
 const Stack = createStackNavigator();
 

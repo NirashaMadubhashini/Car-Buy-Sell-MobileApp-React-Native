@@ -1,25 +1,51 @@
-import { View, Text, TextInput, Input, Platform, Button, StyleSheet, Box, TouchableOpacity, Image, ImageBackground, TextArea, ScrollView, SafeAreaView } from 'react-native'
+import { HStack, View, Text, TextInput, Input, Platform, StyleSheet, Box, TouchableOpacity, Image, ImageBackground, TextArea, ScrollView, SafeAreaView } from 'react-native'
 import React, { useState } from 'react'
-import { IconButton, MD3Colors } from 'react-native-paper'
+import { IconButton, MD3Colors, Button } from 'react-native-paper'
 import ImagePicker from 'react-native-image-crop-picker';
 import { launchCamera, launchImageLibrary } from 'react-native-image-picker';
 
 export default function AddVehicle() {
 
+  const [photo, setPhoto] = useState(null);
 
+  const takePhotoFromCamera = async () => {
+    const options = {
+      saveToPhotos: true,
+      mediaType: 'photo',
+      includeBase64: true,
+      presentationStyle: 'popover',
+      quality: 1
+    }
+    launchCamera(options, (res) => {
+      if (res.didCancel) {
+        console.log('User Cancled');
+      } else if (res.errorCode) {
+        console.log(res.errorMessage);
+      } else {
+        const data = res.assets[0].uri;
+        console.log(data);
+        setPhoto(data);
+      }
+    });
+  }
+
+  const takePhotoFromGallery = async () => {
+    const options = {
+      saveToPhotos: true,
+      mediaType: 'photo'
+    }
+    const result = await launchImageLibrary(options);
+    setPhoto(result.assets[0].uri);
+  }
 
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <ScrollView>
         <View style={styles.container}>
-          <Text style={{ fontSize: 20, justifyContent: 'center', color: "black", fontWeight: 'bold', paddingTop: '9%', left: -65, fontFamily: 'notoserif' }}>Add New Vehicle</Text>
+          <Text style={{ fontSize: 20, justifyContent: 'center', color: "black", fontWeight: 'bold', paddingTop: '30%', left: -65, fontFamily: 'notoserif' }}>Add New Vehicle</Text>
           <TextInput style={styles.input1} placeholder='Date' />
           <TextInput style={styles.input2} placeholder='Location' />
-          {/* <TextInput style={styles.input2} placeholder='Transmission type' />
-          <TextInput style={styles.input2} placeholder='Fuel Type' />
-          <TextInput style={styles.input2} placeholder='Color' />
-          <TextInput style={styles.input2} placeholder='Number of passengers' />
-          <TextInput style={styles.input2} placeholder='Price' /> */}
+
           <View style={styles.MainContainer}>
             <TextInput
               style={styles.TextInputStyleClass}
@@ -31,25 +57,31 @@ export default function AddVehicle() {
             />
           </View>
 
-          <View style={{
+          {/* <View style={{
             borderWidth: 1,
             borderColor: '#2A272A',
             borderRadius: 10,
             width: 200,
             height: 150,
+            
 
-          }} />
+          }} /> */}
 
 
-
+          <Image style={styles.uploadImageContainer} source={{ uri: photo }} />
 
           <TouchableOpacity style={styles.button}>
             <Image
               source={require('../assets/icon/upload1.png')}
               style={{ width: 25, height: 25, left: -80, top: 10 }}
             />
-            <Text style={{ color: '#ffff', fontSize: 20, left: 10, top: -15 }}>Upload Image</Text>
+            <Text style={{ color: '#ffff', fontSize: 20, left: 10, top: -15 }}
+              mode="contained-tonal"
+              onPress={() => { takePhotoFromGallery(); console.log("Upload button Pressed"); }}
+            >Upload Image</Text>
           </TouchableOpacity>
+
+
           <TouchableOpacity
             style={styles.btn}>
             <Text style={{ color: '#ffff', fontSize: 20, }}>Save</Text>
@@ -59,6 +91,8 @@ export default function AddVehicle() {
             style={styles.btn2}>
             <Text style={{ color: '#ffff', fontSize: 20, }}>Cancel</Text>
           </TouchableOpacity>
+
+          
         </View>
       </ScrollView>
     </SafeAreaView>
@@ -67,7 +101,7 @@ export default function AddVehicle() {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    flex: 2,
     justifyContent: 'center',
     alignItems: 'center'
   },
@@ -95,8 +129,9 @@ const styles = StyleSheet.create({
     height: 50,
     alignItems: 'center',
     justifyContent: 'center',
-    marginTop: '5%',
-    marginLeft: '-43%',
+    marginTop: '24%',
+    // marginLeft: '-43%',
+    top: 20,
     borderRadius: 20
   },
   btn2: {
@@ -106,8 +141,10 @@ const styles = StyleSheet.create({
     height: 50,
     alignItems: 'center',
     justifyContent: 'center',
-    marginTop: '-14%',
-    marginLeft: '45%',
+    // marginTop: '-4%',
+    // marginLeft: '45%',
+    top: -30,
+    left: 10,
     borderRadius: 20
   },
   button: {
@@ -123,7 +160,7 @@ const styles = StyleSheet.create({
   },
   MainContainer: {
 
-    flex: 1,
+    flex: 2,
     paddingTop: (Platform.OS) === 'ios' ? 20 : 0,
     justifyContent: 'center',
     margin: 30,
@@ -141,5 +178,15 @@ const styles = StyleSheet.create({
     // backgroundColor: "#FFFFFF",
     height: 120
 
-  }
+  },
+  uploadImageContainer: {
+    borderColor: 'black',
+    borderWidth: 1,
+    width: '80%',
+    height: '30%',
+    // marginTop: '2.5%',
+    alignSelf: 'center',
+    resizeMode: 'cover'
+
+  },
 });

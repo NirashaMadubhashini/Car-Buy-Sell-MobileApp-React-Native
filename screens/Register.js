@@ -26,6 +26,7 @@ export default function Register({ navigation }) {
       })
         .then((response) => response.json())
         .then((json) => {
+          console.log(json)
           if (json.status === "500") {
             Alert.alert(json.message)
           } else {
