@@ -1,10 +1,14 @@
-import { HStack, View, Text, TextInput, Input, Platform, StyleSheet, Box, TouchableOpacity, Image, ImageBackground, TextArea, ScrollView, SafeAreaView } from 'react-native'
+import { HStack, View, Text, TextInput, Input, Platform, StyleSheet, Box,Alert, TouchableOpacity, Image, ImageBackground, TextArea, ScrollView, SafeAreaView } from 'react-native'
 import React, { useState } from 'react'
 import { IconButton, MD3Colors, Button } from 'react-native-paper'
 import ImagePicker from 'react-native-image-crop-picker';
 import { launchCamera, launchImageLibrary } from 'react-native-image-picker';
 
 export default function AddVehicle() {
+  const [date, setDate] = useState("");
+  const [location, setLocation] = useState("");
+  const [description, setDescription] = useState("");
+  const [image, setImage] = useState("");
 
   const [photo, setPhoto] = useState(null);
 
@@ -38,13 +42,69 @@ export default function AddVehicle() {
     setPhoto(result.assets[0].uri);
   }
 
+
+  saveCar = async () => {
+
+    // if (date != "" && location != "" && description != "" && image != "") {
+      if (date != "" && location != "" && description != "") {
+      fetch('http://192.168.1.100:8000/cars', {
+        method: 'POST',
+        body: JSON.stringify({
+          date: date,
+          location: location,
+          description: description,
+          image: image
+        }),
+        headers: {
+          'Content-type': 'application/json; charset=UTF-8',
+        },
+      })
+        .then((response) => response.json())
+        .then((json) => {
+          if (json.status === "500") {
+            Alert.alert(json.message);
+          } else {
+            Alert.alert(json.message);
+            clearTextFields();
+          }
+        })
+        .catch((err) => Alert.alert(err));
+    } else {
+      Alert.alert("Please fill all the fields and try again.")
+    }
+  }
+
+  const clearTextFields = () => {
+    setDate("");
+    setLocation("");
+    setDescription("");
+    // setImage("");
+  }
+
   return (
     <SafeAreaView style={{ flex: 1 }}>
+      {/* <ScrollView contentContainerStyle={{ height: 900 }}> */}
       <ScrollView>
         <View style={styles.container}>
           <Text style={{ fontSize: 20, justifyContent: 'center', color: "black", fontWeight: 'bold', paddingTop: '30%', left: -65, fontFamily: 'notoserif' }}>Add New Vehicle</Text>
-          <TextInput style={styles.input1} placeholder='Date' />
-          <TextInput style={styles.input2} placeholder='Location' />
+
+          <Image style={styles.uploadImageContainer} source={{ uri: photo }} 
+           value={image} onChangeText={(e) => { setImage(e) }}
+          />
+
+
+          <TouchableOpacity style={styles.button}>
+            <Image
+              source={require('../assets/icon/upload1.png')}
+              style={{ width: 25, height: 25, left: -80, top: 10 }}
+            />
+            <Text style={{ color: '#ffff', fontSize: 20, left: 10, top: -15 }}
+              mode="contained-tonal"
+              onPress={() => { takePhotoFromGallery(); console.log("Upload button Pressed"); }}
+            >Upload Image</Text>
+          </TouchableOpacity>
+          <TextInput style={styles.input1} placeholder='Date'  value={date} onChangeText={(e) => { setDate(e) }}/>
+          <TextInput style={styles.input2} placeholder='location'  value={location} onChangeText={(e) => { setLocation(e) }}/>
 
           <View style={styles.MainContainer}>
             <TextInput
@@ -54,6 +114,7 @@ export default function AddVehicle() {
               placeholderTextColor={"#9E9E9E"}
               numberOfLines={10}
               multiline={true}
+              value={description} onChangeText={(e) => { setDescription(e) }}
             />
           </View>
 
@@ -68,22 +129,9 @@ export default function AddVehicle() {
           }} /> */}
 
 
-          <Image style={styles.uploadImageContainer} source={{ uri: photo }} />
-
-          <TouchableOpacity style={styles.button}>
-            <Image
-              source={require('../assets/icon/upload1.png')}
-              style={{ width: 25, height: 25, left: -80, top: 10 }}
-            />
-            <Text style={{ color: '#ffff', fontSize: 20, left: 10, top: -15 }}
-              mode="contained-tonal"
-              onPress={() => { takePhotoFromGallery(); console.log("Upload button Pressed"); }}
-            >Upload Image</Text>
-          </TouchableOpacity>
-
-
           <TouchableOpacity
-            style={styles.btn}>
+            style={styles.btn}
+            onPress={() => { saveCar() }}>
             <Text style={{ color: '#ffff', fontSize: 20, }}>Save</Text>
           </TouchableOpacity>
 
@@ -92,7 +140,7 @@ export default function AddVehicle() {
             <Text style={{ color: '#ffff', fontSize: 20, }}>Cancel</Text>
           </TouchableOpacity>
 
-          
+
         </View>
       </ScrollView>
     </SafeAreaView>
@@ -129,10 +177,11 @@ const styles = StyleSheet.create({
     height: 50,
     alignItems: 'center',
     justifyContent: 'center',
-    marginTop: '24%',
+    // marginTop: '10%',
     // marginLeft: '-43%',
-    top: 20,
-    borderRadius: 20
+    top: -35,
+    left: -85,
+    borderRadius: 15
   },
   btn2: {
     width: '40%',
@@ -143,9 +192,9 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     // marginTop: '-4%',
     // marginLeft: '45%',
-    top: -30,
-    left: 10,
-    borderRadius: 20
+    top: -85,
+    left: 85,
+    borderRadius: 15
   },
   button: {
     width: '80%',
@@ -155,16 +204,16 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     marginTop: '3%',
-    borderRadius: 20,
+    borderRadius: 15,
     borderColor: "black"
   },
   MainContainer: {
-
-    flex: 2,
+    flex: 1,
     paddingTop: (Platform.OS) === 'ios' ? 20 : 0,
     justifyContent: 'center',
     margin: 30,
-    width: 290
+    width: 290,
+    top: -10
 
   },
 
@@ -182,11 +231,14 @@ const styles = StyleSheet.create({
   uploadImageContainer: {
     borderColor: 'black',
     borderWidth: 1,
-    width: '80%',
-    height: '30%',
-    // marginTop: '2.5%',
+    width: '50%',
+    height: '25%',
+    marginTop: '5%',
     alignSelf: 'center',
     resizeMode: 'cover'
 
+  },
+  captureBtn: {
+    marginTop: '4%'
   },
 });

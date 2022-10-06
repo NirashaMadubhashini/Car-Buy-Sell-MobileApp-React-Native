@@ -1,4 +1,4 @@
-import { View, Input, FlatList, Text, TextInput, Button, StyleSheet, TouchableOpacity, Image, ImageBackground, Alert } from 'react-native'
+import { View, Input, FlatList, Text, TextInput, Button, StyleSheet, TouchableOpacity, Image, ImageBackground, Alert, ScrollView, SafeAreaView } from 'react-native'
 import React, { useState, useEffect } from 'react'
 import { Divider } from "@react-native-material/core";
 
@@ -40,36 +40,39 @@ export default function Login({ navigation }) {
 
 
   return (
-    <View style={styles.container} >
-      <Text style={{ fontSize: 35, justifyContent: 'center', color: "black", fontWeight: 'bold', paddingTop: '15%', fontFamily: 'Roboto' }}>Welcome</Text>
-      <Image style={styles.tinyLogo} source={require('../assets/icon/user3.png')} />
+    <SafeAreaView style={{ flex: 1 }}>
+      <ScrollView>
+        <View style={styles.container} >
+          <Text style={{ fontSize: 35, justifyContent: 'center', color: "black", fontWeight: 'bold', paddingTop: '15%', fontFamily: 'Roboto' }}>Welcome</Text>
+          <Image style={styles.tinyLogo} source={require('../assets/icon/user8.png')} />
+          <TextInput style={styles.input1} value={username} onChangeText={(e) => { setUsername(e) }} placeholder='Username' />
+          <TextInput style={styles.input2} value={password} onChangeText={(e) => { setPassword(e) }} placeholder='Password' />
 
-      <TextInput style={styles.input1} value={username} onChangeText={(e) => { setUsername(e) }} placeholder='Username' />
-      <TextInput style={styles.input2} value={password} onChangeText={(e) => { setPassword(e) }} placeholder='Password' />
 
-
-      <TouchableOpacity
-        style={styles.btn}
-        // onPress={() => { navigation.navigate("DashBoard") }}
-        onPress={() => { loginUser() }}
-      // onPress={() => { loginUser() }} 
-      >
-        <Text style={{ color: '#ffff', fontSize: 20 }}>Login</Text>
-      </TouchableOpacity>
-      <Text style={{ fontSize: 18, color: "black", paddingTop: '8%', left: '-13%' }}>Don't have an account?</Text>
-      <TouchableOpacity
-        style={styles.btn2}
-        onPress={() => {
-          try {
-            navigation.navigate("Register")
-          } catch (err) {
-            console.log(err);
-          }
-        }}
-      >
-        <Text style={{ color: 'black', fontSize: 18, fontWeight: 'bold' }}>Create One</Text>
-      </TouchableOpacity>
-    </View>
+          <TouchableOpacity
+            style={styles.btn}
+            // onPress={() => { navigation.navigate("DashBoard") }}
+            onPress={() => { loginUser() }}
+          // onPress={() => { loginUser() }} 
+          >
+            <Text style={{ color: '#ffff', fontSize: 20 }}>Login</Text>
+          </TouchableOpacity>
+          <Text style={{ fontSize: 18, color: "black", paddingTop: '8%', left: '-13%' }}>Don't have an account?</Text>
+          <TouchableOpacity
+            style={styles.btn2}
+            onPress={() => {
+              try {
+                navigation.navigate("Register")
+              } catch (err) {
+                console.log(err);
+              }
+            }}
+          >
+            <Text style={{ color: 'black', fontSize: 18, fontWeight: 'bold' }}>Create One</Text>
+          </TouchableOpacity>
+        </View>
+      </ScrollView>
+    </SafeAreaView>
   )
 }
 
@@ -97,7 +100,7 @@ const styles = StyleSheet.create({
   btn: {
     width: '80%',
     padding: 5,
-    backgroundColor: "#0266D6",
+    backgroundColor: "#055BC7",
     height: 50,
     alignItems: 'center',
     justifyContent: 'center',

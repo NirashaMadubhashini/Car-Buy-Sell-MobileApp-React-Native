@@ -1,4 +1,4 @@
-import { View, Text, TextInput, Button, StyleSheet, TouchableOpacity, Image, Alert } from 'react-native'
+import { View, Text, TextInput, Button, StyleSheet, TouchableOpacity, Image, Alert, ScrollView, SafeAreaView } from 'react-native'
 import React, { useState } from 'react'
 
 
@@ -53,38 +53,42 @@ export default function Register({ navigation }) {
 
 
   return (
-    <View style={styles.container}>
-      <Text style={{ fontSize: 35, justifyContent: 'center', color: "black", fontWeight: 'bold', paddingTop: '10%', fontFamily: 'Roboto' }}>Create Account</Text>
-      {/* <Image style={styles.tinyLogo} source={require('../assets/icon/Register.png')} /> */}
-      <TextInput style={styles.input1} value={fullName} onChangeText={(e) => { setFullName(e) }} placeholder='Full Name' />
-      <TextInput style={styles.input2} value={phoneNumber} onChangeText={(e) => { setPhoneNumber(e) }} placeholder='Phone Number' />
-      <TextInput style={styles.input2} value={username} onChangeText={(e) => { setUsername(e) }} placeholder='Username' />
-      <TextInput style={styles.input2} value={password} onChangeText={(e) => { setPassword(e) }} placeholder='Password' />
-      <TouchableOpacity
-        style={styles.btn}
-        onPress={() => {
-          saveUser()
-          // printUser()
-        }}
-      >
-        <Text style={{ color: '#ffff', fontSize: 20 }}>Register</Text>
+    <SafeAreaView style={{ flex: 1 }}>
+      <ScrollView>
+        <View style={styles.container}>
+          <Text style={{ fontSize: 35, justifyContent: 'center', color: "black", fontWeight: 'bold', paddingTop: '10%', fontFamily: 'Roboto' }}>Create Account</Text>
+          <Image style={styles.tinyLogo} source={require('../assets/icon/reg.png')} />
+          <TextInput style={styles.input1} value={fullName} onChangeText={(e) => { setFullName(e) }} placeholder='Full Name' />
+          <TextInput style={styles.input2} value={phoneNumber} onChangeText={(e) => { setPhoneNumber(e) }} placeholder='Phone Number' />
+          <TextInput style={styles.input2} value={username} onChangeText={(e) => { setUsername(e) }} placeholder='Username' />
+          <TextInput style={styles.input2} value={password} onChangeText={(e) => { setPassword(e) }} placeholder='Password' />
+          <TouchableOpacity
+            style={styles.btn}
+            onPress={() => {
+              saveUser()
+              // printUser()
+            }}
+          >
+            <Text style={{ color: '#ffff', fontSize: 20 }}>Register</Text>
 
-      </TouchableOpacity>
+          </TouchableOpacity>
 
-      <Text style={{ fontSize: 18, color: "black", paddingTop: '8%', left: '-10%' }}>Already have an account?</Text>
-      <TouchableOpacity
-        style={styles.btn2}
-        onPress={() => {
-          try {
-            navigation.navigate("Login")
-          } catch (err) {
-            console.log(err);
-          }
-        }}
-      >
-        <Text style={{ color: 'black', fontSize: 20, fontWeight: 'bold' }}>Login</Text>
-      </TouchableOpacity>
-    </View>
+          <Text style={{ fontSize: 18, color: "black", paddingTop: '8%', left: '-10%' }}>Already have an account?</Text>
+          <TouchableOpacity
+            style={styles.btn2}
+            onPress={() => {
+              try {
+                navigation.navigate("Login")
+              } catch (err) {
+                console.log(err);
+              }
+            }}
+          >
+            <Text style={{ color: 'black', fontSize: 20, fontWeight: 'bold' }}>Login</Text>
+          </TouchableOpacity>
+        </View>
+      </ScrollView>
+    </SafeAreaView>
   )
 }
 
@@ -112,7 +116,7 @@ const styles = StyleSheet.create({
   btn: {
     width: '80%',
     padding: 5,
-    backgroundColor: "#0266D6",
+    backgroundColor: "#055BC7",
     height: 50,
     alignItems: 'center',
     justifyContent: 'center',
@@ -131,7 +135,7 @@ const styles = StyleSheet.create({
     borderRadius: 100
   },
   tinyLogo: {
-    marginTop: '3%',
+    marginTop: '5%',
     width: 70,
     height: 70,
   },
