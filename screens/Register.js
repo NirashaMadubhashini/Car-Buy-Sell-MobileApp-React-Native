@@ -53,7 +53,7 @@ export default function Register({ navigation }) {
 
   return (
     <View style={styles.container}>
-      <Text style={{ fontSize: 35, justifyContent: 'center', color: "black", fontWeight: 'bold', paddingTop: '10%', fontFamily: 'Roboto' }}>Register</Text>
+      <Text style={{ fontSize: 35, justifyContent: 'center', color: "black", fontWeight: 'bold', paddingTop: '10%', fontFamily: 'Roboto' }}>Create Account</Text>
       {/* <Image style={styles.tinyLogo} source={require('../assets/icon/Register.png')} /> */}
       <TextInput style={styles.input1} value={fullName} onChangeText={(e) => { setFullName(e) }} placeholder='Full Name' />
       <TextInput style={styles.input2} value={phoneNumber} onChangeText={(e) => { setPhoneNumber(e) }} placeholder='Phone Number' />
@@ -66,11 +66,11 @@ export default function Register({ navigation }) {
           // printUser()
         }}
       >
-        <Text style={{ color: '#ffff', fontSize: 20 }}>Sign Up</Text>
+        <Text style={{ color: '#ffff', fontSize: 20 }}>Register</Text>
 
       </TouchableOpacity>
 
-      <Text style={{ fontSize: 18, color: "black", paddingTop: '3%', left: '-10%' }}>Already have an account?</Text>
+      <Text style={{ fontSize: 18, color: "black", paddingTop: '8%', left: '-10%' }}>Already have an account?</Text>
       <TouchableOpacity
         style={styles.btn2}
         onPress={() => {

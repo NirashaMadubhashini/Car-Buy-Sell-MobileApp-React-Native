@@ -14,7 +14,7 @@ const Tab = createBottomTabNavigator();
 
 export default function DashBoard() {
   return (
-    <Tab.Navigator headerMode = {'none'}>
+    <Tab.Navigator screenOptions={{headerShown: false}}>
         <Tab.Screen name="Home"
         options={{
           tabBarIcon: () => (<Image source={require("../assets/icon/home.png")} style={{ width: 20, height: 20 }} />),header: () => null
