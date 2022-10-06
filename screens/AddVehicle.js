@@ -179,7 +179,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     // top: -35,
     // left: -85,
-    top: -35,
+    top: -30,
     left: -5,
     borderRadius: 15
   },
