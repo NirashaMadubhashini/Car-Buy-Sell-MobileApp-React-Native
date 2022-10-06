@@ -79,7 +79,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     padding: 10,
     width: '80%',
-    borderRadius: 20,
+    borderRadius: 15,
 
   },
   input2: {
@@ -87,7 +87,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     padding: 10,
     width: '80%',
-    borderRadius: 20,
+    borderRadius: 15,
     fontFamily: 'Roboto'
   },
   container: {
@@ -95,14 +95,14 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   btn: {
-    width: '60%',
+    width: '80%',
     padding: 5,
     backgroundColor: "#0266D6",
     height: 50,
     alignItems: 'center',
     justifyContent: 'center',
     marginTop: '5%',
-    borderRadius: 20,
+    borderRadius: 15,
 
   },
   btn2: {
