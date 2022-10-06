@@ -1,4 +1,4 @@
-import { HStack, View, Text, TextInput, Input, Platform, StyleSheet, Box,Alert, TouchableOpacity, Image, ImageBackground, TextArea, ScrollView, SafeAreaView } from 'react-native'
+import { HStack, View, Text, TextInput, Input, Platform, StyleSheet, Box, Alert, TouchableOpacity, Image, ImageBackground, TextArea, ScrollView, SafeAreaView } from 'react-native'
 import React, { useState } from 'react'
 import { IconButton, MD3Colors, Button } from 'react-native-paper'
 import ImagePicker from 'react-native-image-crop-picker';
@@ -46,7 +46,7 @@ export default function AddVehicle() {
   saveCar = async () => {
 
     // if (date != "" && location != "" && description != "" && image != "") {
-      if (date != "" && location != "" && description != "") {
+    if (date != "" && location != "" && description != "") {
       fetch('http://192.168.1.100:8000/cars', {
         method: 'POST',
         body: JSON.stringify({
@@ -88,8 +88,8 @@ export default function AddVehicle() {
         <View style={styles.container}>
           <Text style={{ fontSize: 20, justifyContent: 'center', color: "black", fontWeight: 'bold', paddingTop: '30%', left: -65, fontFamily: 'notoserif' }}>Add New Vehicle</Text>
 
-          <Image style={styles.uploadImageContainer} source={{ uri: photo }} 
-           value={image} onChangeText={(e) => { setImage(e) }}
+          <Image style={styles.uploadImageContainer} source={{ uri: photo }}
+            value={image} onChangeText={(e) => { setImage(e) }}
           />
 
 
@@ -103,8 +103,8 @@ export default function AddVehicle() {
               onPress={() => { takePhotoFromGallery(); console.log("Upload button Pressed"); }}
             >Upload Image</Text>
           </TouchableOpacity>
-          <TextInput style={styles.input1} placeholder='Date'  value={date} onChangeText={(e) => { setDate(e) }}/>
-          <TextInput style={styles.input2} placeholder='location'  value={location} onChangeText={(e) => { setLocation(e) }}/>
+          <TextInput style={styles.input1} placeholder='Date' value={date} onChangeText={(e) => { setDate(e) }} />
+          <TextInput style={styles.input2} placeholder='location' value={location} onChangeText={(e) => { setLocation(e) }} />
 
           <View style={styles.MainContainer}>
             <TextInput
@@ -132,12 +132,12 @@ export default function AddVehicle() {
           <TouchableOpacity
             style={styles.btn}
             onPress={() => { saveCar() }}>
-            <Text style={{ color: '#ffff', fontSize: 20, }}>Save</Text>
+            <Text style={{ color: '#ffff', fontSize: 20}}>Save</Text>
           </TouchableOpacity>
 
           <TouchableOpacity
             style={styles.btn2}>
-            <Text style={{ color: '#ffff', fontSize: 20, }}>Cancel</Text>
+            <Text style={{ color: '#ffff', fontSize: 20}}>Cancel</Text>
           </TouchableOpacity>
 
 
@@ -173,14 +173,14 @@ const styles = StyleSheet.create({
   btn: {
     width: '40%',
     padding: 5,
-    backgroundColor: "#23B671",
+    backgroundColor: "#055BC7",
     height: 50,
     alignItems: 'center',
     justifyContent: 'center',
-    // marginTop: '10%',
-    // marginLeft: '-43%',
+    // top: -35,
+    // left: -85,
     top: -35,
-    left: -85,
+    left: -5,
     borderRadius: 15
   },
   btn2: {
@@ -190,16 +190,15 @@ const styles = StyleSheet.create({
     height: 50,
     alignItems: 'center',
     justifyContent: 'center',
-    // marginTop: '-4%',
-    // marginLeft: '45%',
-    top: -85,
+    // top: -85,
+    top: -15,
     left: 85,
     borderRadius: 15
   },
   button: {
     width: '80%',
     padding: 5,
-    backgroundColor: "#274BF7",
+    backgroundColor: "#23B671",
     height: 50,
     alignItems: 'center',
     justifyContent: 'center',
