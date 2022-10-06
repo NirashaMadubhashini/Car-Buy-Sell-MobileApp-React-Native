@@ -4,17 +4,16 @@ import { IconButton, MD3Colors, Button } from 'react-native-paper'
 import ImagePicker from 'react-native-image-crop-picker';
 import { launchCamera, launchImageLibrary } from 'react-native-image-picker';
 
-export default function AddVehicle() {
+export default function AddVehicle({ route, navigation }) {
 
-
+  // const [username, setUsername] = useState(route.props.username);
   const [brand, setBrand] = useState("");
   const [transmissionType, setTransmissionType] = useState("");
   const [fuelType, setFuelType] = useState("");
   const [color, setColor] = useState("");
   const [price, setPrice] = useState("");
-  const [image, setImage] = useState("");
-
-  const [photo, setPhoto] = useState(null);
+  const [photo, setPhoto] = useState("");
+  // const [image, setImage] = useState("");
 
   const takePhotoFromCamera = async () => {
     const options = {
@@ -30,7 +29,7 @@ export default function AddVehicle() {
       } else if (res.errorCode) {
         console.log(res.errorMessage);
       } else {
-        const data = res.assets[0].uri;
+        const data = res.assets[0];
         console.log(data);
         setPhoto(data);
       }
@@ -43,63 +42,64 @@ export default function AddVehicle() {
       mediaType: 'photo'
     }
     const result = await launchImageLibrary(options);
-    setPhoto(result.assets[0].uri);
+    console.log(result.assets[0].uri);
+    setPhoto(result.assets[0]);
   }
 
+  const createFormData = (photo, body) => {
+    const data = new FormData();
 
-  saveCar = async () => {
+    data.append('photo', {
+      name: photo.fileName,
+      type: photo.type,
+      uri:
+        Platform.OS === 'android' ? photo.uri : photo.uri.replace('file://', ''),
+    });
 
-    // if (brand!= "" && transmissionType != "" && fuelType != "" && color != "" && price != "" && image != "") {
-    if (brand!= "" && transmissionType != "" && fuelType != "" && color != "" && price != "") {
-      fetch('http://192.168.1.100:8000/cars', {
-        method: 'POST',
-        body: JSON.stringify({
-          brand: brand,
-          transmissionType: transmissionType,
-          fuelType: fuelType,
-          color: color,
-          price: price,
-          image: image
-        }),
-        headers: {
-          'Content-type': 'application/json; charset=UTF-8',
-        },
+    Object.keys(body).forEach((key) => {
+      data.append(key, body[key]);
+    });
+
+    console.log(data);
+
+    return data;
+  };
+
+
+  const uploadImage = async () => {
+    fetch('http://192.168.8.109:8000/cars/save', {
+      method: 'POST',
+      body: createFormData(photo, {
+        // username: username,
+        brand: brand,
+        transmissionType: transmissionType,
+        fuelType: fuelType,
+        color: color,
+        price: price
+      }),
+      headers: {
+        'Accept': 'application/json',
+        'Content-type': 'multipart/form-data',
+      },
+    })
+      .then((response) => response.json())
+      .then((json) => {
+        alert('Upload success!');
       })
-        .then((response) => response.json())
-        .then((json) => {
-          console.log(json)
-          if (json.status === "500") {
-            Alert.alert(json.message);
-          } else {
-            Alert.alert(json.message);
-            clearTextFields();
-          }
-        })
-        .catch((err) => Alert.alert(err));
-    } else {
-      Alert.alert("Please fill all the fields and try again.")
-    }
-  }
-
-  const clearTextFields = () => {
-    setBrand("");
-    setTransmissionType("");
-    setFuelType("");
-    setColor("");
-    setPrice("");
-    setImage("");
+      .catch((error) => {
+        console.log('upload error', error);
+        alert('Upload failed!');
+      });
   }
 
   return (
-    <SafeAreaView style={{ flex:1 }}>
+    <SafeAreaView style={{ flex: 1 }}>
       <ScrollView contentContainerStyle={{ height: 650 }}>
-      {/* <ScrollView> */}
+        {/* <ScrollView> */}
         <View style={styles.container}>
-          <Text style={{ fontSize: 20, justifyContent: 'center', color: "black", fontWeight: 'bold', top:-5, left: -85, fontFamily: 'notoserif' }}>Add New Vehicle</Text>
+          <Text style={{ fontSize: 20, justifyContent: 'center', color: "black", fontWeight: 'bold', top: 10, left: -85, fontFamily: 'notoserif' }}>Add New Vehicle</Text>
 
-          <Image style={styles.uploadImageContainer} source={{ uri: photo }}
-            value={image} onChangeText={(e) => { setImage(e) }}
-          />
+          <Image style={styles.uploadImageContainer} source={{ uri: photo.uri }} />
 
 
           <TouchableOpacity style={styles.button}>
@@ -112,39 +112,19 @@ export default function AddVehicle() {
               onPress={() => { takePhotoFromGallery(); console.log("Upload button Pressed"); }}
             >Upload Image</Text>
           </TouchableOpacity>
+
+        
           <TextInput style={styles.input1} placeholder='brand' value={brand} onChangeText={(e) => { setBrand(e) }} />
           <TextInput style={styles.input2} placeholder='transmissionType' value={transmissionType} onChangeText={(e) => { setTransmissionType(e) }} />
           <TextInput style={styles.input2} placeholder='fuelType' value={fuelType} onChangeText={(e) => { setFuelType(e) }} />
           <TextInput style={styles.input2} placeholder='color' value={color} onChangeText={(e) => { setColor(e) }} />
           <TextInput style={styles.input2} placeholder='price' value={price} onChangeText={(e) => { setPrice(e) }} />
 
-          {/* <View style={styles.MainContainer}>
-            <TextInput
-              style={styles.TextInputStyleClass}
-              underlineColorAndroid="transparent"
-              placeholder={"Add Vehicle Description Here"}
-              placeholderTextColor={"#9E9E9E"}
-              numberOfLines={10}
-              multiline={true}
-              value={description} onChangeText={(e) => { setDescription(e) }}
-            />
-          </View> */}
-
-          {/* <View style={{
-            borderWidth: 1,
-            borderColor: '#2A272A',
-            borderRadius: 10,
-            width: 200,
-            height: 150,
-            
-
-          }} /> */}
-
 
           <TouchableOpacity
             style={styles.btn}
-            onPress={() => { saveCar() }}>
-            <Text style={{ color: '#ffff', fontSize: 20}}>Save</Text>
+            onPress={() => { uploadImage() }}>
+            <Text style={{ color: '#ffff', fontSize: 20 }}>Save</Text>
           </TouchableOpacity>
 
           {/* <TouchableOpacity
@@ -166,7 +146,7 @@ const styles = StyleSheet.create({
     alignItems: 'center'
   },
   input1: {
-    marginTop: '8%',
+    marginTop: '15%',
     borderWidth: 1,
     padding: 10,
     width: '80%',
@@ -191,7 +171,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     // top: -35,
     // left: -85,
-    marginTop:'2%',
+    marginTop: '2%',
     left: -5,
     borderRadius: 15
   },
@@ -214,7 +194,7 @@ const styles = StyleSheet.create({
     height: 50,
     alignItems: 'center',
     justifyContent: 'center',
-    top:15,
+    top: 40,
     // marginTop: '3%',
     borderRadius: 15,
     borderColor: "black"
@@ -244,9 +224,9 @@ const styles = StyleSheet.create({
     borderColor: 'black',
     borderWidth: 1,
     width: '50%',
-    height: '20%',
+    height: '25%',
     // marginTop: '-15%',
-    top:10,
+    top: 30,
     alignSelf: 'center',
     resizeMode: 'cover'
 
