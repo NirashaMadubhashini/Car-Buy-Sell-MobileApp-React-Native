@@ -5,6 +5,7 @@ import * as React from 'react'
 import Login from './screens/Login'
 import Register from './screens/Register'
 import DashBoard from './screens/DashBoard'
+import Welcome from './screens/welcome';
 
 const Stack = createStackNavigator();
 
@@ -12,6 +13,7 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator screenOptions={{headerShown: false}}>
+        <Stack.Screen name='Welcome' component={Welcome}/>
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="Register" component={Register} />
         <Stack.Screen name="DashBoard" component={DashBoard} />

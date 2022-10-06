@@ -41,7 +41,7 @@ export default function Login({ navigation }) {
 
   return (
     <View style={styles.container} >
-      <Text style={{ fontSize: 35, justifyContent: 'center', color: "black", fontWeight: 'bold', paddingTop: '15%', fontFamily: 'Roboto' }}>Login</Text>
+      <Text style={{ fontSize: 35, justifyContent: 'center', color: "black", fontWeight: 'bold', paddingTop: '15%', fontFamily: 'Roboto' }}>Welcome</Text>
       <Image style={styles.tinyLogo} source={require('../assets/icon/user3.png')} />
 
       <TextInput style={styles.input1} value={username} onChangeText={(e) => { setUsername(e) }} placeholder='Username' />
