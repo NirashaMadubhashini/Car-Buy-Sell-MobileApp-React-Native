@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@expo/vector-icons": "^13.0.0",
+    "@react-native-community/datetimepicker": "^6.5.0",
     "@react-native-community/hooks": "^2.8.1",
     "@react-native-community/netinfo": "^9.3.2",
     "@react-native-masked-view/masked-view": "^0.2.8",
@@ -34,6 +35,8 @@
     "react-native": "^0.70.1",
     "react-native-actionsheet": "^2.4.2",
     "react-native-cards": "^1.1.4",
+    "react-native-date-picker": "^4.2.5",
+    "react-native-datepicker": "^1.7.2",
     "react-native-elements": "^3.4.2",
     "react-native-expo-image-cache": "^4.1.0",
     "react-native-gesture-handler": "^2.6.2",

@@ -22,7 +22,7 @@ export default function DashBoard() {
         component={Home} />
       <Tab.Screen name="Add Vehicle"
         options={{
-          tabBarIcon: () => (<Image source={require("../assets/icon/add2.png")} style={{ width: 20, height: 20 }} />),header: () => null
+          tabBarIcon: () => (<Image source={require("../assets/icon/adding.png")} style={{ width: 20, height: 20 }} />),header: () => null
         }}
         component={AddVehicle} />
       <Tab.Screen name="VehicleInfo" options={{
