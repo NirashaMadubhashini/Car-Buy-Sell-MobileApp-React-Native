@@ -61,6 +61,7 @@ export default function AddVehicle() {
       })
         .then((response) => response.json())
         .then((json) => {
+          console.log(json)
           if (json.status === "500") {
             Alert.alert(json.message);
           } else {
@@ -82,11 +83,11 @@ export default function AddVehicle() {
   }
 
   return (
-    <SafeAreaView style={{ flex: 1 }}>
+    <SafeAreaView style={{ flex: 2 }}>
       {/* <ScrollView contentContainerStyle={{ height: 900 }}> */}
       <ScrollView>
         <View style={styles.container}>
-          <Text style={{ fontSize: 20, justifyContent: 'center', color: "black", fontWeight: 'bold', paddingTop: '30%', left: -65, fontFamily: 'notoserif' }}>Add New Vehicle</Text>
+          <Text style={{ fontSize: 20, justifyContent: 'center', color: "black", fontWeight: 'bold', paddingTop: '30%', left: -85, fontFamily: 'notoserif' }}>Add New Vehicle</Text>
 
           <Image style={styles.uploadImageContainer} source={{ uri: photo }}
             value={image} onChangeText={(e) => { setImage(e) }}
@@ -105,8 +106,11 @@ export default function AddVehicle() {
           </TouchableOpacity>
           <TextInput style={styles.input1} placeholder='Date' value={date} onChangeText={(e) => { setDate(e) }} />
           <TextInput style={styles.input2} placeholder='location' value={location} onChangeText={(e) => { setLocation(e) }} />
+          <TextInput style={styles.input2} placeholder='location' value={location} onChangeText={(e) => { setLocation(e) }} />
+          <TextInput style={styles.input2} placeholder='location' value={location} onChangeText={(e) => { setLocation(e) }} />
+          <TextInput style={styles.input2} placeholder='location' value={location} onChangeText={(e) => { setLocation(e) }} />
 
-          <View style={styles.MainContainer}>
+          {/* <View style={styles.MainContainer}>
             <TextInput
               style={styles.TextInputStyleClass}
               underlineColorAndroid="transparent"
@@ -116,7 +120,7 @@ export default function AddVehicle() {
               multiline={true}
               value={description} onChangeText={(e) => { setDescription(e) }}
             />
-          </View>
+          </View> */}
 
           {/* <View style={{
             borderWidth: 1,
@@ -154,7 +158,7 @@ const styles = StyleSheet.create({
     alignItems: 'center'
   },
   input1: {
-    marginTop: '5%',
+    marginTop: '3%',
     borderWidth: 1,
     padding: 10,
     width: '80%',
@@ -163,7 +167,7 @@ const styles = StyleSheet.create({
 
   },
   input2: {
-    marginTop: '5%',
+    marginTop: '3%',
     borderWidth: 1,
     padding: 10,
     width: '80%',
@@ -179,7 +183,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     // top: -35,
     // left: -85,
-    top: -30,
+    top:-10,
     left: -5,
     borderRadius: 15
   },
@@ -206,15 +210,15 @@ const styles = StyleSheet.create({
     borderRadius: 15,
     borderColor: "black"
   },
-  MainContainer: {
-    flex: 1,
-    paddingTop: (Platform.OS) === 'ios' ? 20 : 0,
-    justifyContent: 'center',
-    margin: 30,
-    width: 290,
-    top: -10
+  // MainContainer: {
+  //   flex: 1,
+  //   paddingTop: (Platform.OS) === 'ios' ? 20 : 0,
+  //   justifyContent: 'center',
+  //   margin: 30,
+  //   width: 290,
+  //   top: -10
 
-  },
+  // },
 
   TextInputStyleClass: {
 

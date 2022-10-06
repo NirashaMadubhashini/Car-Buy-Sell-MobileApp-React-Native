@@ -8,7 +8,7 @@ export default function Home() {
     <SafeAreaView style={{ flex:1}}>
       <ScrollView>
         <View style={{ flex: 1, justifyContent: "center" }}>
-        <Text style={{fontSize:20,justifyContent: 'center',color:"black",fontWeight:'bold',paddingTop: '9%',left:20,fontFamily: 'notoserif'}}>Buy And Sell Your Cars Here</Text>
+        <Text style={{fontSize:20,justifyContent: 'center',color:"black",fontWeight:'bold',paddingTop: '9%',left:20,fontFamily: 'notoserif'}}>Sell Your Cars Here</Text>
           <View style={{ backgroundColor: "#8F8A87", borderRadius: 10, overflow: "hidden", height: 250, width: 160, left: 15, top: 20 }}>
             <View>
               <Image

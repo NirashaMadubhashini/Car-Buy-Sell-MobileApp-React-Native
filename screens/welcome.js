@@ -4,7 +4,7 @@ import { ImageBackground, StyleSheet, Text, View, TouchableOpacity } from "react
 const image = { uri: "https://tse3.mm.bing.net/th?id=OIP.QO64VUnSdMwR7R2l_HBgFwHaNK&pid=Api&P=0" };
 
 
-export default function welcome({ navigation }) {
+export default function Welcome({ navigation }) {
     return (
         <View style={styles.container}>
             <ImageBackground source={image} resizeMode="cover" style={styles.image}>
