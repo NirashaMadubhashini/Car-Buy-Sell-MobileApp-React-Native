@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 
 
 export default function Register({ navigation }) {
-  
+
   const [fullName, setFullName] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
   const [username, setUsername] = useState("");
@@ -11,7 +11,7 @@ export default function Register({ navigation }) {
 
   const saveUser = async () => {
 
-    if (fullName != "" &&  phoneNumber != "" && username != "" && password != "") {
+    if (fullName != "" && phoneNumber != "" && username != "" && password != "") {
       fetch('http://192.168.8.109:8000/users', {
         method: 'POST',
         body: JSON.stringify({
@@ -37,7 +37,7 @@ export default function Register({ navigation }) {
     } else {
       Alert.alert("Please fill all the fields and try again.")
     }
-    }
+  }
 
 
   const clearTextFields = () => {
@@ -55,22 +55,22 @@ export default function Register({ navigation }) {
     <View style={styles.container}>
       <Text style={{ fontSize: 35, justifyContent: 'center', color: "black", fontWeight: 'bold', paddingTop: '10%', fontFamily: 'Roboto' }}>Register</Text>
       {/* <Image style={styles.tinyLogo} source={require('../assets/icon/Register.png')} /> */}
-      <TextInput style={styles.input1} value={fullName} onChangeText={(e) => {setFullName(e)}} placeholder='Full Name' />
+      <TextInput style={styles.input1} value={fullName} onChangeText={(e) => { setFullName(e) }} placeholder='Full Name' />
       <TextInput style={styles.input2} value={phoneNumber} onChangeText={(e) => { setPhoneNumber(e) }} placeholder='Phone Number' />
       <TextInput style={styles.input2} value={username} onChangeText={(e) => { setUsername(e) }} placeholder='Username' />
       <TextInput style={styles.input2} value={password} onChangeText={(e) => { setPassword(e) }} placeholder='Password' />
       <TouchableOpacity
         style={styles.btn}
-        onPress={() => { 
+        onPress={() => {
           saveUser()
           // printUser()
         }}
       >
         <Text style={{ color: '#ffff', fontSize: 20 }}>Sign Up</Text>
-        
+
       </TouchableOpacity>
 
-      <Text style={{ fontSize: 18,color: "black", paddingTop: '3%',left: '-10%'}}>Already have an account?</Text>
+      <Text style={{ fontSize: 18, color: "black", paddingTop: '3%', left: '-10%' }}>Already have an account?</Text>
       <TouchableOpacity
         style={styles.btn2}
         onPress={() => {
@@ -81,7 +81,7 @@ export default function Register({ navigation }) {
           }
         }}
       >
-        <Text style={{ color: 'black', fontSize: 20,fontWeight:'bold' }}>Login</Text>
+        <Text style={{ color: 'black', fontSize: 20, fontWeight: 'bold' }}>Login</Text>
       </TouchableOpacity>
     </View>
   )
@@ -126,7 +126,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     marginTop: '-10%',
-    marginLeft:'55%',
+    marginLeft: '55%',
     borderRadius: 100
   },
   tinyLogo: {
@@ -134,5 +134,5 @@ const styles = StyleSheet.create({
     width: 70,
     height: 70,
   },
- 
+
 });

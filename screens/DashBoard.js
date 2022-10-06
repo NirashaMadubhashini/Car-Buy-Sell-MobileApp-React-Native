@@ -4,7 +4,6 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import AddVehicle from '../screens/AddVehicle'
 import VehicleInfo from '../screens/VehicleInfo'
-import BuyVehicle from '../screens/BuyVehicle'
 import { IconComponentProvider, Icon } from "@react-native-material/core";
 import { HomeStackNavigator, ContactStackNavigator } from "./StackNavigator";
 import Home from './Home';
