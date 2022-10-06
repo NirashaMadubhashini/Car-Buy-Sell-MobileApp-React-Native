@@ -5,9 +5,13 @@ import ImagePicker from 'react-native-image-crop-picker';
 import { launchCamera, launchImageLibrary } from 'react-native-image-picker';
 
 export default function AddVehicle() {
-  const [date, setDate] = useState("");
-  const [location, setLocation] = useState("");
-  const [description, setDescription] = useState("");
+
+
+  const [brand, setBrand] = useState("");
+  const [transmissionType, setTransmissionType] = useState("");
+  const [fuelType, setFuelType] = useState("");
+  const [color, setColor] = useState("");
+  const [price, setPrice] = useState("");
   const [image, setImage] = useState("");
 
   const [photo, setPhoto] = useState(null);
@@ -45,14 +49,16 @@ export default function AddVehicle() {
 
   saveCar = async () => {
 
-    // if (date != "" && location != "" && description != "" && image != "") {
-    if (date != "" && location != "" && description != "") {
+    // if (brand!= "" && transmissionType != "" && fuelType != "" && color != "" && price != "" && image != "") {
+    if (brand!= "" && transmissionType != "" && fuelType != "" && color != "" && price != "") {
       fetch('http://192.168.1.100:8000/cars', {
         method: 'POST',
         body: JSON.stringify({
-          date: date,
-          location: location,
-          description: description,
+          brand: brand,
+          transmissionType: transmissionType,
+          fuelType: fuelType,
+          color: color,
+          price: price,
           image: image
         }),
         headers: {
@@ -76,18 +82,20 @@ export default function AddVehicle() {
   }
 
   const clearTextFields = () => {
-    setDate("");
-    setLocation("");
-    setDescription("");
-    // setImage("");
+    setBrand("");
+    setTransmissionType("");
+    setFuelType("");
+    setColor("");
+    setPrice("");
+    setImage("");
   }
 
   return (
-    <SafeAreaView style={{ flex: 2 }}>
-      {/* <ScrollView contentContainerStyle={{ height: 900 }}> */}
-      <ScrollView>
+    <SafeAreaView style={{ flex:1 }}>
+      <ScrollView contentContainerStyle={{ height: 650 }}>
+      {/* <ScrollView> */}
         <View style={styles.container}>
-          <Text style={{ fontSize: 20, justifyContent: 'center', color: "black", fontWeight: 'bold', paddingTop: '30%', left: -85, fontFamily: 'notoserif' }}>Add New Vehicle</Text>
+          <Text style={{ fontSize: 20, justifyContent: 'center', color: "black", fontWeight: 'bold', top:-5, left: -85, fontFamily: 'notoserif' }}>Add New Vehicle</Text>
 
           <Image style={styles.uploadImageContainer} source={{ uri: photo }}
             value={image} onChangeText={(e) => { setImage(e) }}
@@ -104,11 +112,11 @@ export default function AddVehicle() {
               onPress={() => { takePhotoFromGallery(); console.log("Upload button Pressed"); }}
             >Upload Image</Text>
           </TouchableOpacity>
-          <TextInput style={styles.input1} placeholder='Date' value={date} onChangeText={(e) => { setDate(e) }} />
-          <TextInput style={styles.input2} placeholder='location' value={location} onChangeText={(e) => { setLocation(e) }} />
-          <TextInput style={styles.input2} placeholder='location' value={location} onChangeText={(e) => { setLocation(e) }} />
-          <TextInput style={styles.input2} placeholder='location' value={location} onChangeText={(e) => { setLocation(e) }} />
-          <TextInput style={styles.input2} placeholder='location' value={location} onChangeText={(e) => { setLocation(e) }} />
+          <TextInput style={styles.input1} placeholder='brand' value={brand} onChangeText={(e) => { setBrand(e) }} />
+          <TextInput style={styles.input2} placeholder='transmissionType' value={transmissionType} onChangeText={(e) => { setTransmissionType(e) }} />
+          <TextInput style={styles.input2} placeholder='fuelType' value={fuelType} onChangeText={(e) => { setFuelType(e) }} />
+          <TextInput style={styles.input2} placeholder='color' value={color} onChangeText={(e) => { setColor(e) }} />
+          <TextInput style={styles.input2} placeholder='price' value={price} onChangeText={(e) => { setPrice(e) }} />
 
           {/* <View style={styles.MainContainer}>
             <TextInput
@@ -139,10 +147,10 @@ export default function AddVehicle() {
             <Text style={{ color: '#ffff', fontSize: 20}}>Save</Text>
           </TouchableOpacity>
 
-          <TouchableOpacity
+          {/* <TouchableOpacity
             style={styles.btn2}>
             <Text style={{ color: '#ffff', fontSize: 20}}>Cancel</Text>
-          </TouchableOpacity>
+          </TouchableOpacity> */}
 
 
         </View>
@@ -153,12 +161,12 @@ export default function AddVehicle() {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 2,
+    flex: 1,
     justifyContent: 'center',
     alignItems: 'center'
   },
   input1: {
-    marginTop: '3%',
+    marginTop: '8%',
     borderWidth: 1,
     padding: 10,
     width: '80%',
@@ -183,7 +191,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     // top: -35,
     // left: -85,
-    top:-10,
+    marginTop:'2%',
     left: -5,
     borderRadius: 15
   },
@@ -195,7 +203,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     // top: -85,
-    top: -15,
+    top: 45,
     left: 85,
     borderRadius: 15
   },
@@ -206,7 +214,8 @@ const styles = StyleSheet.create({
     height: 50,
     alignItems: 'center',
     justifyContent: 'center',
-    marginTop: '3%',
+    top:15,
+    // marginTop: '3%',
     borderRadius: 15,
     borderColor: "black"
   },
@@ -235,8 +244,9 @@ const styles = StyleSheet.create({
     borderColor: 'black',
     borderWidth: 1,
     width: '50%',
-    height: '25%',
-    marginTop: '5%',
+    height: '20%',
+    // marginTop: '-15%',
+    top:10,
     alignSelf: 'center',
     resizeMode: 'cover'
 

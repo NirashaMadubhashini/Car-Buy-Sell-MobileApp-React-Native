@@ -48,9 +48,6 @@ export default function VehicleInfo({ navigation }) {
                   Color: Red
                 </Text>
                 <Text style={styles.input2}>
-                  No of passengers : 7
-                </Text>
-                <Text style={styles.input2}>
                   Price : Rs. 2,575,000
                 </Text>
                 <Pressable
@@ -98,9 +95,6 @@ export default function VehicleInfo({ navigation }) {
                 </Text>
                 <Text style={styles.input2}>
                   Color: Orange
-                </Text>
-                <Text style={styles.input2}>
-                  No of passengers : 8
                 </Text>
                 <Text style={styles.input2}>
                   Price :Rs. 2,575,000.
@@ -152,9 +146,6 @@ export default function VehicleInfo({ navigation }) {
                   Color: Blue
                 </Text>
                 <Text style={styles.input2}>
-                  No of passengers : 5
-                </Text>
-                <Text style={styles.input2}>
                   Price : Rs 4,090,000
                 </Text>
                 <Pressable
@@ -202,9 +193,6 @@ export default function VehicleInfo({ navigation }) {
                 </Text>
                 <Text style={styles.input2}>
                   Color: White
-                </Text>
-                <Text style={styles.input2}>
-                  No of passengers : 5
                 </Text>
                 <Text style={styles.input2}>
                   Price : Rs 4,600,000
@@ -260,9 +248,6 @@ export default function VehicleInfo({ navigation }) {
                   Color: Light Blue
                 </Text>
                 <Text style={styles.input2}>
-                  No of passengers : 4
-                </Text>
-                <Text style={styles.input2}>
                   Price : Rs. 9,500,000
                 </Text>
                 <Pressable
@@ -310,9 +295,6 @@ export default function VehicleInfo({ navigation }) {
                 </Text>
                 <Text style={styles.input2}>
                   Color: Sky Blue
-                </Text>
-                <Text style={styles.input2}>
-                  No of passengers : 5
                 </Text>
                 <Text style={styles.input2}>
                   Price : Rs. 5,600,000
@@ -364,9 +346,6 @@ export default function VehicleInfo({ navigation }) {
                   Color: Ash
                 </Text>
                 <Text style={styles.input2}>
-                  No of passengers : 3
-                </Text>
-                <Text style={styles.input2}>
                   Price : Rs.6,750,000
                 </Text>
                 <Pressable
@@ -414,9 +393,6 @@ export default function VehicleInfo({ navigation }) {
                 </Text>
                 <Text style={styles.input2}>
                   Color: Red
-                </Text>
-                <Text style={styles.input2}>
-                  No of passengers : 5
                 </Text>
                 <Text style={styles.input2}>
                   Price : Rs.5,790,000
@@ -474,9 +450,6 @@ export default function VehicleInfo({ navigation }) {
                   Color:Black
                 </Text>
                 <Text style={styles.input2}>
-                  No of passengers : 2
-                </Text>
-                <Text style={styles.input2}>
                   Price : Rs.30,000,000
                 </Text>
                 <Pressable
@@ -524,9 +497,6 @@ export default function VehicleInfo({ navigation }) {
                 </Text>
                 <Text style={styles.input2}>
                   Color: White
-                </Text>
-                <Text style={styles.input2}>
-                  No of passengers : 2
                 </Text>
                 <Text style={styles.input2}>
                   Price : Rs.25,500,000
@@ -578,9 +548,6 @@ export default function VehicleInfo({ navigation }) {
                   Color: Ash
                 </Text>
                 <Text style={styles.input2}>
-                  No of passengers : 5
-                </Text>
-                <Text style={styles.input2}>
                   Price : Rs.19,852,700
                 </Text>
                 <Pressable
@@ -628,9 +595,6 @@ export default function VehicleInfo({ navigation }) {
                 </Text>
                 <Text style={styles.input2}>
                   Color: Green
-                </Text>
-                <Text style={styles.input2}>
-                  No of passengers : 5
                 </Text>
                 <Text style={styles.input2}>
                   Price : Rs.13,750,000
