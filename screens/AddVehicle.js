@@ -66,30 +66,70 @@ export default function AddVehicle({ route, navigation }) {
   };
 
 
+  // const uploadImage = async () => {
+  //   fetch('http://192.168.8.109:8000/cars/save', {
+  //     method: 'POST',
+  //     body: createFormData(photo, {
+  //       // username: username,
+  //       brand: brand,
+  //       transmissionType: transmissionType,
+  //       fuelType: fuelType,
+  //       color: color,
+  //       price: price
+  //     }),
+  //     headers: {
+  //       'Accept': 'application/json',
+  //       'Content-type': 'multipart/form-data',
+  //     },
+  //   })
+  //     .then((response) => response.json())
+  //     .then((json) => {
+  //       alert('Upload success!');
+  //     })
+  //     .catch((error) => {
+  //       console.log('upload error', error);
+  //       alert('Upload failed!');
+  //     });
+  // }
+
   const uploadImage = async () => {
-    fetch('http://192.168.8.109:8000/cars/save', {
-      method: 'POST',
-      body: createFormData(photo, {
-        // username: username,
-        brand: brand,
-        transmissionType: transmissionType,
-        fuelType: fuelType,
-        color: color,
-        price: price
-      }),
-      headers: {
-        'Accept': 'application/json',
-        'Content-type': 'multipart/form-data',
-      },
-    })
-      .then((response) => response.json())
-      .then((json) => {
-        alert('Upload success!');
+
+    if (brand != "" && transmissionType != "" && fuelType != "" && color != "" && price != "") {
+      fetch('http://192.168.8.109:8000/cars/save', {
+        method: 'POST',
+        body: JSON.stringify({
+          brand: brand,
+          transmissionType: transmissionType,
+          fuelType: fuelType,
+          color: color,
+          price: price
+        }),
+        headers: {
+          'Content-type': 'application/json; charset=UTF-8',
+        },
       })
-      .catch((error) => {
-        console.log('upload error', error);
-        alert('Upload failed!');
-      });
+        .then((response) => response.json())
+        .then((json) => {
+          if (json.status === "500") {
+            Alert.alert(json.message)
+          } else {
+            Alert.alert(json.message)
+            clearTextFields();
+          }
+        })
+        .catch((err) => Alert.alert(err.message));
+    } else {
+      Alert.alert("Please fill all the fields and try again.")
+    }
+  }
+
+
+  const clearTextFields = () => {
+    setBrand("");
+    setTransmissionType("");
+    setFuelType("");
+    setColor("");
+    setPrice("");
   }
 
   return (
@@ -113,7 +153,7 @@ export default function AddVehicle({ route, navigation }) {
             >Upload Image</Text>
           </TouchableOpacity>
 
-        
+
           <TextInput style={styles.input1} placeholder='brand' value={brand} onChangeText={(e) => { setBrand(e) }} />
           <TextInput style={styles.input2} placeholder='transmissionType' value={transmissionType} onChangeText={(e) => { setTransmissionType(e) }} />
           <TextInput style={styles.input2} placeholder='fuelType' value={fuelType} onChangeText={(e) => { setFuelType(e) }} />
