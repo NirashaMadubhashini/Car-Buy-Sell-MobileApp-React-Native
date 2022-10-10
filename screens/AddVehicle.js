@@ -5,15 +5,13 @@ import ImagePicker from 'react-native-image-crop-picker';
 import { launchCamera, launchImageLibrary } from 'react-native-image-picker';
 
 export default function AddVehicle({ route, navigation }) {
-
-  // const [username, setUsername] = useState(route.props.username);
   const [brand, setBrand] = useState("");
   const [transmissionType, setTransmissionType] = useState("");
   const [fuelType, setFuelType] = useState("");
   const [color, setColor] = useState("");
   const [price, setPrice] = useState("");
   const [photo, setPhoto] = useState("");
-  // const [image, setImage] = useState("");
+  const [open, setOpen] = useState(false)
 
   const takePhotoFromCamera = async () => {
     const options = {
@@ -53,8 +51,8 @@ export default function AddVehicle({ route, navigation }) {
       name: photo.fileName,
       type: photo.type,
       uri:
-        Platform.OS === 'android' ? photo.uri : photo.uri.replace('file://', ''),
-    });
+          Platform.OS === 'android' ? photo.uri : photo.uri.replace('file://', ''),
+  });
 
     Object.keys(body).forEach((key) => {
       data.append(key, body[key]);
@@ -82,14 +80,19 @@ export default function AddVehicle({ route, navigation }) {
   //       'Content-type': 'multipart/form-data',
   //     },
   //   })
-  //     .then((response) => response.json())
-  //     .then((json) => {
-  //       alert('Upload success!');
-  //     })
-  //     .catch((error) => {
-  //       console.log('upload error', error);
-  //       alert('Upload failed!');
-  //     });
+  //   .then((response) => response.json())
+  //   .then((json) => {
+  //       if (json.status === "200") {
+  //           Alert.alert(json.message);
+  //           clearTextFields();
+  //       } else {
+  //           Alert.alert(json.message);
+  //       }
+  //   })
+  //   .catch((error) => {
+  //       Alert.alert('Error occured.Try again shortly');
+  //   });
+
   // }
 
   const uploadImage = async () => {
@@ -125,6 +128,7 @@ export default function AddVehicle({ route, navigation }) {
 
 
   const clearTextFields = () => {
+    setPhoto("");
     setBrand("");
     setTransmissionType("");
     setFuelType("");
@@ -167,10 +171,12 @@ export default function AddVehicle({ route, navigation }) {
             <Text style={{ color: '#ffff', fontSize: 20 }}>Save</Text>
           </TouchableOpacity>
 
-          {/* <TouchableOpacity
-            style={styles.btn2}>
+          <TouchableOpacity
+            style={styles.btn2}
+            onPress={clearTextFields} 
+            >
             <Text style={{ color: '#ffff', fontSize: 20}}>Cancel</Text>
-          </TouchableOpacity> */}
+          </TouchableOpacity>
 
 
         </View>
@@ -212,7 +218,7 @@ const styles = StyleSheet.create({
     // top: -35,
     // left: -85,
     marginTop: '2%',
-    left: -5,
+    left: -85,
     borderRadius: 15
   },
   btn2: {
@@ -223,7 +229,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     // top: -85,
-    top: 45,
+    // top: 45,
+    marginTop: '-14%',
     left: 85,
     borderRadius: 15
   },
