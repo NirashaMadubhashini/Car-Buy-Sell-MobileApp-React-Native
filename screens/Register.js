@@ -48,9 +48,6 @@ export default function Register({ navigation }) {
   }
 
 
-
-
-
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <ScrollView>
