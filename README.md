@@ -4,12 +4,12 @@ DashBoard
 
 ![screenshot](assets/project/1.png)
 
-login
+Login
 
 ![screenshot](assets/project/3.png)
 
 
-signUp
+Register
 
 ![screenshot](assets/project/2.png)
 
