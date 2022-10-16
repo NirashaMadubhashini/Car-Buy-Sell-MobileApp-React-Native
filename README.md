@@ -6,12 +6,12 @@ DashBoard
 
 login
 
-![screenshot](assets/project/2.png)
+![screenshot](assets/project/3.png)
 
 
 signUp
 
-![screenshot](assets/project/3.png)
+![screenshot](assets/project/2.png)
 
 
 Home
