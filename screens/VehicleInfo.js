@@ -52,207 +52,207 @@ export default function VehicleInfo({ navigation }) {
       <ScrollView contentContainerStyle={{ height: 1350 }}>
         <ScrollView horizontal contentContainerStyle={{ width: 1090 }}>
           <Text style={{ fontSize: 20, justifyContent: 'center', color: "black", fontWeight: 'bold', paddingTop: '3%', left: 20, fontFamily: 'notoserif' }}>General Cars</Text>
-       
-              <View style={{ flex: 1, justifyContent: "center" }} data={DATA}>
-                <View style={{
-                  margin: 20,
-                  backgroundColor: "white",
-                  borderRadius: 20,
-                  padding: 35,
-                  alignItems: "center",
-                  shadowColor: "#000",
-                  shadowOffset: {
-                    width: 10,
-                    height: 20
-                  },
-                  shadowOpacity: 0.25,
-                  shadowRadius: 4,
-                  elevation: 5,
-                  top: 160,
-                  left: -120,
-                  width: 250,
-                  height: 350
+
+          <View style={{ flex: 1, justifyContent: "center" }} data={DATA}>
+            <View style={{
+              margin: 20,
+              backgroundColor: "white",
+              borderRadius: 20,
+              padding: 35,
+              alignItems: "center",
+              shadowColor: "#000",
+              shadowOffset: {
+                width: 10,
+                height: 20
+              },
+              shadowOpacity: 0.25,
+              shadowRadius: 4,
+              elevation: 5,
+              top: 160,
+              left: -120,
+              width: 250,
+              height: 350
+            }}
+            >
+              <Image
+                source={require("../assets/cars/Alto.jpeg")}
+                style={{
+                  height: 135,
+                  width: 200,
+                  top: -20
                 }}
+              />
+              <View style={{ padding: 10, width: 200 }}>
+                <Text style={styles.input1} onChangeText={(e) => { setBrand(e) }} >Suzuki Alto</Text>
+                <Text style={styles.input2} onChangeText={(e) => { setTransmissionType(e) }} >
+                  Transmission type:Manual
+                </Text>
+                <Text style={styles.input2} onChangeText={(e) => { setFuelType(e) }} >
+                  Fuel type:Petrol
+                </Text>
+                <Text style={styles.input2} onChangeText={(e) => { setColor(e) }} >
+                  Color: Red
+                </Text>
+                <Text style={styles.input2} onChangeText={(e) => { setPrice(e) }} >
+                  Price :1,800,000
+                </Text>
+                <Pressable
+                  style={[styles.button, styles.buttonClose]}
+                  onPress={() => { navigation.navigate("Update"), setModalVisible(!modalVisible) }}
                 >
-                  <Image
-                    source={require("../assets/cars/Alto.jpeg")}
-                    style={{
-                      height: 135,
-                      width: 200,
-                      top: -20
-                    }}
-                  />
-                  <View style={{ padding: 10, width: 200 }}>
-                    <Text style={styles.input1} onChangeText={(e) => { setBrand(e) }} >Suzuki Alto</Text>
-                    <Text style={styles.input2} onChangeText={(e) => { setTransmissionType(e) }} >
-                      Transmission type:Manual
-                    </Text>
-                    <Text style={styles.input2} onChangeText={(e) => { setFuelType(e) }} >
-                      Fuel type:Petrol
-                    </Text>
-                    <Text style={styles.input2} onChangeText={(e) => { setColor(e) }} >
-                      Color: Red
-                    </Text>
-                    <Text style={styles.input2} onChangeText={(e) => { setPrice(e) }} >
-                      Price :1,800,000
-                    </Text>
-                    <Pressable
-                      style={[styles.button, styles.buttonClose]}
-                      onPress={() => { navigation.navigate("BuyVehicle"), setModalVisible(!modalVisible) }}
-                    >
-                      <Text style={styles.textStyle}>Buy Now</Text>
-                    </Pressable>
-                  </View>
-                </View>
-                <View style={{
-                  margin: 20,
-                  backgroundColor: "white",
-                  borderRadius: 20,
-                  padding: 35,
-                  alignItems: "center",
-                  shadowColor: "#000",
-                  shadowOffset: {
-                    width: 10,
-                    height: 20
-                  },
-                  shadowOpacity: 0.25,
-                  shadowRadius: 4,
-                  elevation: 5,
-                  top: -230,
-                  left: 150,
-                  width: 250,
-                  height: 350
-                }}>
-                  <Image
-                    source={require("../assets/cars/AltoK10.jpeg")}
-                    style={{
-                      height: 135,
-                      width: 200,
-                      top: -20
-                    }}
-                  />
-                  <View style={{ padding: 10, width: 200 }}>
-                    <Text style={styles.input1}>Suzuki Alto K10</Text>
-                    <Text style={styles.input2}>
-                      Transmission type:  Auto
-                    </Text>
-                    <Text style={styles.input2}>
-                      Fuel type: Diesel
-                    </Text>
-                    <Text style={styles.input2}>
-                      Color: Orange
-                    </Text>
-                    <Text style={styles.input2}>
-                      Price :Rs. 2,575,000.
-                    </Text>
-                    <Pressable
-                      style={[styles.button, styles.buttonClose]}
-                      onPress={() => { navigation.navigate("BuyVehicle"), setModalVisible(!modalVisible) }}
-                    >
-                      <Text style={styles.textStyle}>Buy Now</Text>
-                    </Pressable>
-                  </View>
-                </View>
-                <View style={{
-                  margin: 20,
-                  backgroundColor: "white",
-                  borderRadius: 20,
-                  padding: 35,
-                  alignItems: "center",
-                  shadowColor: "#000",
-                  shadowOffset: {
-                    width: 10,
-                    height: 20
-                  },
-                  shadowOpacity: 0.25,
-                  shadowRadius: 4,
-                  elevation: 5,
-                  top: -620,
-                  left: 420,
-                  width: 250,
-                  height: 350
-                }}>
-                  <Image
-                    source={require("../assets/cars/Celerio.jpeg")}
-                    style={{
-                      height: 135,
-                      width: 200,
-                      top: -20
-                    }}
-                  />
-                  <View style={{ padding: 10, width: 200 }}>
-                    <Text style={styles.input1}>Suzuki Celerio</Text>
-                    <Text style={styles.input2}>
-                      Transmission type:  Auto
-                    </Text>
-                    <Text style={styles.input2}>
-                      Fuel type: Diesel
-                    </Text>
-                    <Text style={styles.input2}>
-                      Color: Blue
-                    </Text>
-                    <Text style={styles.input2}>
-                      Price : Rs 4,090,000
-                    </Text>
-                    <Pressable
-                      style={[styles.button, styles.buttonClose]}
-                      onPress={() => { navigation.navigate("BuyVehicle"), setModalVisible(!modalVisible) }}
-                    >
-                      <Text style={styles.textStyle}>Buy Now</Text>
-                    </Pressable>
-                  </View>
-                </View>
-                <View style={{
-                  margin: 20,
-                  backgroundColor: "white",
-                  borderRadius: 20,
-                  padding: 35,
-                  alignItems: "center",
-                  shadowColor: "#000",
-                  shadowOffset: {
-                    width: 10,
-                    height: 20
-                  },
-                  shadowOpacity: 0.25,
-                  shadowRadius: 4,
-                  elevation: 5,
-                  top: -1010,
-                  left: 690,
-                  width: 250,
-                  height: 350
-                }}>
-                  <Image
-                    source={require("../assets/cars/PeroduaAxia.jpeg")}
-                    style={{
-                      height: 135,
-                      width: 200,
-                      top: -20
-                    }}
-                  />
-                  <View style={{ padding: 10, width: 200 }}>
-                    <Text style={styles.input1}>Perodua Axia</Text>
-                    <Text style={styles.input2}>
-                      Transmission type:  Auto
-                    </Text>
-                    <Text style={styles.input2}>
-                      Fuel type: Diesel
-                    </Text>
-                    <Text style={styles.input2}>
-                      Color: White
-                    </Text>
-                    <Text style={styles.input2}>
-                      Price : Rs 4,600,000
-                    </Text>
-                    <Pressable
-                      style={[styles.button, styles.buttonClose]}
-                      onPress={() => { navigation.navigate("BuyVehicle"), setModalVisible(!modalVisible) }}
-                    >
-                      <Text style={styles.textStyle}>Buy Now</Text>
-                    </Pressable>
-                  </View>
-                </View>
+                  <Text style={styles.textStyle}>Update</Text>
+                </Pressable>
               </View>
-        
+            </View>
+            <View style={{
+              margin: 20,
+              backgroundColor: "white",
+              borderRadius: 20,
+              padding: 35,
+              alignItems: "center",
+              shadowColor: "#000",
+              shadowOffset: {
+                width: 10,
+                height: 20
+              },
+              shadowOpacity: 0.25,
+              shadowRadius: 4,
+              elevation: 5,
+              top: -230,
+              left: 150,
+              width: 250,
+              height: 350
+            }}>
+              <Image
+                source={require("../assets/cars/AltoK10.jpeg")}
+                style={{
+                  height: 135,
+                  width: 200,
+                  top: -20
+                }}
+              />
+              <View style={{ padding: 10, width: 200 }}>
+                <Text style={styles.input1}>Suzuki Alto K10</Text>
+                <Text style={styles.input2}>
+                  Transmission type:  Auto
+                </Text>
+                <Text style={styles.input2}>
+                  Fuel type: Diesel
+                </Text>
+                <Text style={styles.input2}>
+                  Color: Orange
+                </Text>
+                <Text style={styles.input2}>
+                  Price :Rs. 2,575,000.
+                </Text>
+                <Pressable
+                      style={[styles.button, styles.buttonClose]}
+                      onPress={() => { navigation.navigate("Update"), setModalVisible(!modalVisible) }}
+                    >
+                      <Text style={styles.textStyle}>Update</Text>
+                    </Pressable>
+              </View>
+            </View>
+            <View style={{
+              margin: 20,
+              backgroundColor: "white",
+              borderRadius: 20,
+              padding: 35,
+              alignItems: "center",
+              shadowColor: "#000",
+              shadowOffset: {
+                width: 10,
+                height: 20
+              },
+              shadowOpacity: 0.25,
+              shadowRadius: 4,
+              elevation: 5,
+              top: -620,
+              left: 420,
+              width: 250,
+              height: 350
+            }}>
+              <Image
+                source={require("../assets/cars/Celerio.jpeg")}
+                style={{
+                  height: 135,
+                  width: 200,
+                  top: -20
+                }}
+              />
+              <View style={{ padding: 10, width: 200 }}>
+                <Text style={styles.input1}>Suzuki Celerio</Text>
+                <Text style={styles.input2}>
+                  Transmission type:  Auto
+                </Text>
+                <Text style={styles.input2}>
+                  Fuel type: Diesel
+                </Text>
+                <Text style={styles.input2}>
+                  Color: Blue
+                </Text>
+                <Text style={styles.input2}>
+                  Price : Rs 4,090,000
+                </Text>
+                <Pressable
+                      style={[styles.button, styles.buttonClose]}
+                      onPress={() => { navigation.navigate("Update"), setModalVisible(!modalVisible) }}
+                    >
+                      <Text style={styles.textStyle}>Update</Text>
+                    </Pressable>
+              </View>
+            </View>
+            <View style={{
+              margin: 20,
+              backgroundColor: "white",
+              borderRadius: 20,
+              padding: 35,
+              alignItems: "center",
+              shadowColor: "#000",
+              shadowOffset: {
+                width: 10,
+                height: 20
+              },
+              shadowOpacity: 0.25,
+              shadowRadius: 4,
+              elevation: 5,
+              top: -1010,
+              left: 690,
+              width: 250,
+              height: 350
+            }}>
+              <Image
+                source={require("../assets/cars/PeroduaAxia.jpeg")}
+                style={{
+                  height: 135,
+                  width: 200,
+                  top: -20
+                }}
+              />
+              <View style={{ padding: 10, width: 200 }}>
+                <Text style={styles.input1}>Perodua Axia</Text>
+                <Text style={styles.input2}>
+                  Transmission type:  Auto
+                </Text>
+                <Text style={styles.input2}>
+                  Fuel type: Diesel
+                </Text>
+                <Text style={styles.input2}>
+                  Color: White
+                </Text>
+                <Text style={styles.input2}>
+                  Price : Rs 4,600,000
+                </Text>
+                <Pressable
+                      style={[styles.button, styles.buttonClose]}
+                      onPress={() => { navigation.navigate("Update"), setModalVisible(!modalVisible) }}
+                    >
+                      <Text style={styles.textStyle}>Update</Text>
+                    </Pressable>
+              </View>
+            </View>
+          </View>
+
           <Text style={{ fontSize: 20, justifyContent: 'center', color: "black", fontWeight: 'bold', paddingTop: '45%', left: -340, fontFamily: 'notoserif' }}>Premium Cars</Text>
           <View style={{ flex: 1, justifyContent: "center" }}>
             <View style={{
@@ -297,11 +297,11 @@ export default function VehicleInfo({ navigation }) {
                   Price : Rs. 9,500,000
                 </Text>
                 <Pressable
-                  style={[styles.button, styles.buttonClose]}
-                  onPress={() => { navigation.navigate("BuyVehicle"), setModalVisible(!modalVisible) }}
-                >
-                  <Text style={styles.textStyle}>Buy Now</Text>
-                </Pressable>
+                      style={[styles.button, styles.buttonClose]}
+                      onPress={() => { navigation.navigate("Update"), setModalVisible(!modalVisible) }}
+                    >
+                      <Text style={styles.textStyle}>Update</Text>
+                    </Pressable>
               </View>
             </View>
             <View style={{
@@ -346,11 +346,11 @@ export default function VehicleInfo({ navigation }) {
                   Price : Rs. 5,600,000
                 </Text>
                 <Pressable
-                  style={[styles.button, styles.buttonClose]}
-                  onPress={() => { navigation.navigate("BuyVehicle"), setModalVisible(!modalVisible) }}
-                >
-                  <Text style={styles.textStyle}>Buy Now</Text>
-                </Pressable>
+                      style={[styles.button, styles.buttonClose]}
+                      onPress={() => { navigation.navigate("Update"), setModalVisible(!modalVisible) }}
+                    >
+                      <Text style={styles.textStyle}>Update</Text>
+                    </Pressable>
               </View>
             </View>
             <View style={{
@@ -395,11 +395,11 @@ export default function VehicleInfo({ navigation }) {
                   Price : Rs.6,750,000
                 </Text>
                 <Pressable
-                  style={[styles.button, styles.buttonClose]}
-                  onPress={() => { navigation.navigate("BuyVehicle"), setModalVisible(!modalVisible) }}
-                >
-                  <Text style={styles.textStyle}>Buy Now</Text>
-                </Pressable>
+                      style={[styles.button, styles.buttonClose]}
+                      onPress={() => { navigation.navigate("Update"), setModalVisible(!modalVisible) }}
+                    >
+                      <Text style={styles.textStyle}>Update</Text>
+                    </Pressable>
               </View>
             </View>
             <View style={{
@@ -444,11 +444,11 @@ export default function VehicleInfo({ navigation }) {
                   Price : Rs.5,790,000
                 </Text>
                 <Pressable
-                  style={[styles.button, styles.buttonClose]}
-                  onPress={() => { navigation.navigate("BuyVehicle"), setModalVisible(!modalVisible) }}
-                >
-                  <Text style={styles.textStyle}>Buy Now</Text>
-                </Pressable>
+                      style={[styles.button, styles.buttonClose]}
+                      onPress={() => { navigation.navigate("Update"), setModalVisible(!modalVisible) }}
+                    >
+                      <Text style={styles.textStyle}>Update</Text>
+                    </Pressable>
               </View>
             </View>
           </View>
@@ -499,11 +499,11 @@ export default function VehicleInfo({ navigation }) {
                   Price : Rs.30,000,000
                 </Text>
                 <Pressable
-                  style={[styles.button, styles.buttonClose]}
-                  onPress={() => { navigation.navigate("BuyVehicle"), setModalVisible(!modalVisible) }}
-                >
-                  <Text style={styles.textStyle}>Buy Now</Text>
-                </Pressable>
+                      style={[styles.button, styles.buttonClose]}
+                      onPress={() => { navigation.navigate("Update"), setModalVisible(!modalVisible) }}
+                    >
+                      <Text style={styles.textStyle}>Update</Text>
+                    </Pressable>
               </View>
             </View>
             <View style={{
@@ -548,11 +548,11 @@ export default function VehicleInfo({ navigation }) {
                   Price : Rs.25,500,000
                 </Text>
                 <Pressable
-                  style={[styles.button, styles.buttonClose]}
-                  onPress={() => { navigation.navigate("BuyVehicle"), setModalVisible(!modalVisible) }}
-                >
-                  <Text style={styles.textStyle}>Buy Now</Text>
-                </Pressable>
+                      style={[styles.button, styles.buttonClose]}
+                      onPress={() => { navigation.navigate("Update"), setModalVisible(!modalVisible) }}
+                    >
+                      <Text style={styles.textStyle}>Update</Text>
+                    </Pressable>
               </View>
             </View>
             <View style={{
@@ -597,11 +597,11 @@ export default function VehicleInfo({ navigation }) {
                   Price : Rs.19,852,700
                 </Text>
                 <Pressable
-                  style={[styles.button, styles.buttonClose]}
-                  onPress={() => { navigation.navigate("BuyVehicle"), setModalVisible(!modalVisible) }}
-                >
-                  <Text style={styles.textStyle}>Buy Now</Text>
-                </Pressable>
+                      style={[styles.button, styles.buttonClose]}
+                      onPress={() => { navigation.navigate("Update"), setModalVisible(!modalVisible) }}
+                    >
+                      <Text style={styles.textStyle}>Update</Text>
+                    </Pressable>
               </View>
             </View>
             <View style={{
@@ -646,11 +646,11 @@ export default function VehicleInfo({ navigation }) {
                   Price : Rs.13,750,000
                 </Text>
                 <Pressable
-                  style={[styles.button, styles.buttonClose]}
-                  onPress={() => { navigation.navigate("BuyVehicle"), setModalVisible(!modalVisible) }}
-                >
-                  <Text style={styles.textStyle}>Buy Now</Text>
-                </Pressable>
+                      style={[styles.button, styles.buttonClose]}
+                      onPress={() => { navigation.navigate("Update"), setModalVisible(!modalVisible) }}
+                    >
+                      <Text style={styles.textStyle}>Update</Text>
+                    </Pressable>
               </View>
             </View>
           </View>
@@ -662,62 +662,62 @@ export default function VehicleInfo({ navigation }) {
 
 
 const styles = StyleSheet.create({
-modalView: {
-  margin: 20,
-  backgroundColor: "white",
-  borderRadius: 20,
-  padding: 35,
-  alignItems: "center",
-  shadowColor: "#000",
-  shadowOffset: {
-    width: 10,
-    height: 20
+  modalView: {
+    margin: 20,
+    backgroundColor: "white",
+    borderRadius: 20,
+    padding: 35,
+    alignItems: "center",
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 10,
+      height: 20
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 4,
+    elevation: 5,
+    marginTop: 10,
+    width: 250,
+    height: 350
   },
-  shadowOpacity: 0.25,
-  shadowRadius: 4,
-  elevation: 5,
-  marginTop: 10,
-  width: 250,
-  height: 350
-},
 
-button: {
-  borderRadius: 10,
-  padding: 10,
-  elevation: 2,
-  top: -10,
-  width: 200,
-  left: -10
-},
-buttonOpen: {
-  backgroundColor: "#2196F3",
-},
-buttonClose: {
-  backgroundColor: "green",
-},
-buttonExit: {
-  backgroundColor: "red",
-},
-textStyle: {
-  color: "white",
-  fontWeight: "bold",
-  textAlign: "center"
-},
-modalText: {
-  marginBottom: 15,
-  textAlign: "center"
-},
-input1: {
-  fontSize: 20,
-  color: "black",
-  fontWeight: 'bold',
-  top: -20,
-  fontFamily: 'normal'
-},
-input2: {
-  fontSize: 15,
-  color: "black",
-  top: -20,
-  fontFamily: 'normal'
-}
+  button: {
+    borderRadius: 10,
+    padding: 10,
+    elevation: 2,
+    top: -10,
+    width: 200,
+    left: -10
+  },
+  buttonOpen: {
+    backgroundColor: "#2196F3",
+  },
+  buttonClose: {
+    backgroundColor: "green",
+  },
+  buttonExit: {
+    backgroundColor: "red",
+  },
+  textStyle: {
+    color: "white",
+    fontWeight: "bold",
+    textAlign: "center"
+  },
+  modalText: {
+    marginBottom: 15,
+    textAlign: "center"
+  },
+  input1: {
+    fontSize: 20,
+    color: "black",
+    fontWeight: 'bold',
+    top: -20,
+    fontFamily: 'normal'
+  },
+  input2: {
+    fontSize: 15,
+    color: "black",
+    top: -20,
+    fontFamily: 'normal'
+  }
 });

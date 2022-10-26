@@ -6,6 +6,7 @@ import Login from './screens/Login'
 import Register from './screens/Register'
 import DashBoard from './screens/DashBoard'
 import Welcome from './screens/Welcome';
+import update from './screens/UpdateCar';
 
 const Stack = createStackNavigator();
 
